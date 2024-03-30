@@ -30,7 +30,7 @@ define(['managerAPI',
     API.addGlobal({
         raceiat:{},
         //YBYB: change when copying back to the correct folder
-        baseURL: './study/images/',
+        baseURL: './images/',
         raceSet:raceSet,
         blackLabels:blackLabels,
         whiteLabels:whiteLabels,
