@@ -9,7 +9,7 @@ define(['managerAPI',
 
 	var API    = new Manager();
 	//const subid = Date.now().toString(16)+Math.floor(Math.random()*10000).toString(16);
-	init_data_pipe(API, 'RRfyP8fV08E0',  {file_type:'csv'});	
+	init_data_pipe(API, '1ZHVrJ0ozNUt',  {file_type:'csv'});	
 
     API.setName('mgr');
     API.addSettings('skip',true);
