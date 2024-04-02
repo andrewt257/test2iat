@@ -66,7 +66,7 @@ define(['questAPI'], function(Quest){
     API.addQuestionsSet('attributes7',{
         inherit : 'basicSelect',
         name: 'attributes7',
-        stem: 'Which statement best describes you?',
+        stem: 'What is your favorite number?',
         answers: [
             {text:'I strongly prefer <%= global.whiteLabels %> to <%= global.blackLabels %>.',value:7},
             {text:'I moderately prefer <%= global.whiteLabels %> to <%= global.blackLabels %>.',value:6},
@@ -81,13 +81,13 @@ define(['questAPI'], function(Quest){
     API.addQuestionsSet('thermBlack',{
         inherit : 'therm',
         name: 'Tblack_0to10',
-        stem: 'How warm or cold do you feel towards <b><%= global.blackLabels %></b>?'
+        stem: 'have you enjoyed this test?'
     });
 
     API.addQuestionsSet('thermWhite',{
         inherit : 'therm',
         name: 'Twhite_0to10',
-        stem: 'How warm or cold do you feel towards <b><%= global.whiteLabels %></b>?'
+        stem: '7?'
     });
 
     API.addSequence([
