@@ -45,17 +45,14 @@ define(['questAPI'], function(Quest){
     API.addQuestionsSet('therm',{
         inherit: 'basicSelect',
         answers: [
-            {text:'10 - Extremely warm', value:10},
-            {text:'9 - Very warm', value:9},
-            {text:'8 - Moderately warm', value:8},
-            {text:'7 - Somewhat warm', value:7},
-            {text:'6 - Slightly warm', value:6},
-            {text:'5 - Neither warm nor cold', value:5},
-            {text:'4 - Slightly cold', value:4},
-            {text:'3 - Somewhat cold', value:3},
-            {text:'2 - Moderately cold', value:2},
-            {text:'1 - Very cold', value:1},
-            {text:'0 - Extremely cold', value:0}
+            
+            {text:'6 - Strongly Agree', value:6},
+            {text:'5 - Agree', value:5},
+            {text:'4 - Slightly Agree', value:4},
+            {text:'3 - Neutral', value:3},
+            {text:'2 - Slightly Disagree', value:2},
+            {text:'1 - Disagree', value:1},
+            {text:'0 - Strongly Disagree', value:0}
         ]
     });
 
@@ -66,7 +63,7 @@ define(['questAPI'], function(Quest){
     API.addQuestionsSet('attributes7',{
         inherit : 'basicSelect',
         name: 'attributes7',
-        stem: 'What is your favorite number?',
+        stem: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?',
         answers: [
             {text:'I strongly prefer <%= global.whiteLabels %> to <%= global.blackLabels %>.',value:7},
             {text:'I moderately prefer <%= global.whiteLabels %> to <%= global.blackLabels %>.',value:6},
@@ -81,13 +78,13 @@ define(['questAPI'], function(Quest){
     API.addQuestionsSet('thermBlack',{
         inherit : 'therm',
         name: 'Tblack_0to10',
-        stem: 'have you enjoyed this test?'
+        stem: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?'
     });
 
     API.addQuestionsSet('thermWhite',{
         inherit : 'therm',
         name: 'Twhite_0to10',
-        stem: '7?'
+        stem: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?'
     });
 
     API.addSequence([
