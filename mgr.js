@@ -86,6 +86,12 @@ define(['managerAPI',
             scriptUrl: 'explicits.js'
         }],
 
+        demographics: [{
+            type: 'quest',
+            name: 'demographics',
+            scriptUrl: 'demographics.js'
+        }],
+
         raceiat: [{
             type: 'time',
             name: 'raceiat',
