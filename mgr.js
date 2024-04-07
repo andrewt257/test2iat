@@ -158,7 +158,7 @@ define(['managerAPI',
         {
             mixer:'random',
             data:[
-                {inherit: 'vignettes'},
+                {inherit: 'explicits'},
                 // force the instructions to preceed the iat
                 {
                     mixer: 'wrapper',
