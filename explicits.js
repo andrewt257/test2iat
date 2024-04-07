@@ -115,6 +115,9 @@ define(['questAPI'], function(Quest){
             ]
         }
     ]);
+    base_url : {//Where are your images at?
+        image : global.baseURL
+    }
 
     return API.script;
 });
