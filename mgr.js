@@ -162,7 +162,7 @@ define(['managerAPI',
         
         {inherit: 'intro'},
         {
-            mixer:'sequential',
+            mixer:'random',
             data:[
                 {inherit: 'demographics'},
                 {inherit: 'explicits'},
