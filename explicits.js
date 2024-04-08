@@ -69,15 +69,14 @@ define(['questAPI'], function(Quest){
         inherit : 'basicSelect',
         name: 'attributes7',
         stem: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?',
-        
         answers: [
-            {text:'I strongly prefer <%= global.whiteLabels %> to <%= global.blackLabels %>.',value:7},
-            {text:'I moderately prefer <%= global.whiteLabels %> to <%= global.blackLabels %>.',value:6},
-            {text:'I slightly prefer <%= global.whiteLabels %> to <%= global.blackLabels %>.',value:5},
-            {text:'I like <%= global.whiteLabels %> and <%= global.blackLabels %> equally.',value:4},
-            {text:'I slightly prefer <%= global.blackLabels %> to <%= global.whiteLabels %>.',value:3},
-            {text:'I moderately prefer <%= global.blackLabels %> to <%= global.whiteLabels %>.',value:2},
-            {text:'I strongly prefer <%= global.blackLabels %> to <%= global.whiteLabels %>.',value:1}
+            {text:'I strongly agree <%= global.whiteLabels %> to <%= global.blackLabels %>.',value:7},
+            {text:'I moderately agree <%= global.whiteLabels %> to <%= global.blackLabels %>.',value:6},
+            {text:'I slightly agree <%= global.whiteLabels %> to <%= global.blackLabels %>.',value:5},
+            {text:'I neither agree nor disagree <%= global.whiteLabels %> and <%= global.blackLabels %> equally.',value:4},
+            {text:'I slightly disagree <%= global.blackLabels %> to <%= global.whiteLabels %>.',value:3},
+            {text:'I moderately disagree <%= global.blackLabels %> to <%= global.whiteLabels %>.',value:2},
+            {text:'I strongly disagree <%= global.blackLabels %> to <%= global.whiteLabels %>.',value:1}
         ],
 
     });
@@ -85,7 +84,6 @@ define(['questAPI'], function(Quest){
     API.addQuestionsSet('thermBlack',{
         inherit : 'therm',
         name: 'Tblack_0to10',
-        stem: '<h4>Patient 1</h4><img class="img-responsive" src="<%=current.baseURL%>bf1_nc.jpg">',
         stem: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?',
         
     });
