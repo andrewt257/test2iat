@@ -98,6 +98,12 @@ define(['managerAPI',
             scriptUrl: 'raceiat.js'
         }],
 
+        debriefing: [{
+            type: 'quest',
+            name: 'debriefing',
+            scriptUrl: 'debriefing.js'
+        }],
+
         lastpage: [{
             type: 'message',
             name: 'lastpage',
@@ -175,7 +181,8 @@ define(['managerAPI',
                         {inherit: 'raceiat_instructions'},
                         {inherit: 'raceiat'}
                     ]
-                }
+                },
+                {inherit: 'debriefing'}
             ]
         },
 
