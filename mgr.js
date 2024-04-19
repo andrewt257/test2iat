@@ -72,6 +72,11 @@ define(['managerAPI',
             header: 'Welcome'
         }],
 
+        consent1: [{
+            type:'message',
+            buttonText: 'I acknowledge'
+        }],
+
         consent: [{
             inherit: 'consent1',
             name: 'consent',
