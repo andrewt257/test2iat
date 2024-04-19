@@ -170,6 +170,7 @@ define(['managerAPI',
         {
             mixer:'wrapper',
             data:[
+                {inherit: 'debriefing'},
                 {inherit: 'demographics'},
                 {inherit: 'explicits'},
                 
@@ -181,8 +182,8 @@ define(['managerAPI',
                         {inherit: 'raceiat_instructions'},
                         {inherit: 'raceiat'}
                     ]
-                },
-                {inherit: 'debriefing'}
+                }
+                
             ]
         },
 
