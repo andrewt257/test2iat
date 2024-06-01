@@ -12,7 +12,7 @@ define(['questAPI'], function(Quest){
 
     API.addPagesSet('basicPage',{
         noSubmit:false, //Change to true if you don't want to show the submit button.
-        header: 'Questionnaire',
+        header: 'Vignettes',
         decline: true,
         declineText: isTouch ? 'Decline' : 'Decline to Answer', 
         autoFocus:true, 
