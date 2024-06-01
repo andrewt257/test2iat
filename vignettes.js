@@ -129,10 +129,6 @@ define(['questAPI'], function(Quest){
         {
             mixer : 'wrapper', 
             data : [
-                {
-                    mixer : 'random', 
-                    wrapper:true, 
-                    data : [
                         {
                             mixer : 'choose',
                             n:1,
@@ -146,9 +142,6 @@ define(['questAPI'], function(Quest){
                                     questions: {inherit: 'thermaBlack2'}
                                 },
                             ]
-                            
-                            
-                            
                         },
                         {
                             mixer : 'choose',
@@ -182,8 +175,6 @@ define(['questAPI'], function(Quest){
                         }
                     ]
                 },
-            ]
-        }
     ]);
 
     return API.script;
