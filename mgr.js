@@ -92,10 +92,10 @@ define(['managerAPI',
             header: 'Implicit Association Test'
         }],
 
-        explicits: [{
+        vignettes: [{
             type: 'quest',
-            name: 'explicits',
-            scriptUrl: 'explicits.js'
+            name: 'vignettes',
+            scriptUrl: 'vignettes.js'
         }],
 
         demographics: [{
@@ -184,7 +184,7 @@ define(['managerAPI',
             data:[
                 {inherit: 'consent'},
                 {inherit: 'demographics'},
-                {inherit: 'explicits'},
+                {inherit: 'vignettes'},
                 
                 
                 // force the instructions to preceed the iat
