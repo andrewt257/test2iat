@@ -110,13 +110,12 @@ define(['questAPI'], function(Quest){
                         {
                             inherit:'basicPage', 
                             questions: {inherit:'thermWhite'}							
+                        },
+                        {   inherit:'basicPage', 
+                            questions: {inherit:'attributes7'}
                         }
                     ]
                 },
-                {
-                    inherit:'basicPage', 
-                    questions: {inherit:'attributes7'}
-                }
             ]
         }
     ]);
