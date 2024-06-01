@@ -131,6 +131,7 @@ define(['questAPI'], function(Quest){
             data : [
                         {
                             mixer : 'choose',
+                            wrapper:true,
                             n:1,
                             data : [
                                 {
@@ -139,12 +140,13 @@ define(['questAPI'], function(Quest){
                                 },
                                 {   
                                     inherit: 'basicPage',
-                                    questions: {inherit: 'thermaBlack2'}
+                                    questions: {inherit: 'thermBlack2'}
                                 },
                             ]
                         },
                         {
                             mixer : 'choose',
+                            wrapper:true,
                             n:1,
                             data : [
                                 {
@@ -160,6 +162,7 @@ define(['questAPI'], function(Quest){
                         },
                         {   
                             mixer:'choose',
+                            wrapper:true,
                             n:1,
                             data: [
                                 {
