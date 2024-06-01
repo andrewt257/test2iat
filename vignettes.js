@@ -65,10 +65,10 @@ define(['questAPI'], function(Quest){
     /**
 	*Specific questions
 	*/	
-    API.addQuestionsSet('attributes7',{
+    API.addQuestionsSet('attributes1',{
         inherit : 'basicSelect',
         name: 'attributes7',
-        stem: ['Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?','<h4>patient3</h4><img class="img-responsive" src="<%=current.baseURL%>bm3_nc.jpg">'],
+        stem: ['Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?','<h4>patient3</h4><img class="img-responsive" src="<%=current.baseURL%>wf3_nc.jpg">'],
         answers: [
             {text:'I am very likely to prescribe medical cannabis',value:7},
             {text:'I moderately likely to prescribe medical cannabis',value:6},
@@ -81,17 +81,47 @@ define(['questAPI'], function(Quest){
 
     });
 	
-    API.addQuestionsSet('thermBlack',{
+    API.addQuestionsSet('attributes2',{
+        inherit : 'basicSelect',
+        name: 'attributes7',
+        stem: ['Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?','<h4>patient3</h4><img class="img-responsive" src="<%=current.baseURL%>bf3_nc.jpg">'],
+        answers: [
+            {text:'I am very likely to prescribe medical cannabis',value:7},
+            {text:'I moderately likely to prescribe medical cannabis',value:6},
+            {text:'I slightly lilely to prescribe medical cannabis',value:5},
+            {text:'I am equally likely to prescribe or not prescribemedical cannabis',value:4},
+            {text:'I slightly unlikely to prescribe medical cannabis',value:3},
+            {text:'I moderately unlikely to prescribe medical cannabis',value:2},
+            {text:'I strongly unlikely to prescribe medical cannabis',value:1}
+        ],
+
+    });
+
+    API.addQuestionsSet('thermBlack1',{
         inherit : 'therm',
         name: 'Tblack_0to10',
         stem: ['Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?','<h4>patient2</h4><img class="img-responsive" src="<%=current.baseURL%>wm1_nc.jpg">'],
         
     });
 
-    API.addQuestionsSet('thermWhite',{
+    API.addQuestionsSet('thermBlack2',{
+        inherit : 'therm',
+        name: 'Tblack_0to10',
+        stem: ['Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?','<h4>patient2</h4><img class="img-responsive" src="<%=current.baseURL%>bm1_nc.jpg">'],
+        
+    });
+
+    API.addQuestionsSet('thermWhite1',{
         inherit : 'therm',
         name: 'Twhite_0to10',
         stem: ['Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?','<h4>patient1</h4><img class="img-responsive" src="<%=current.baseURL%>bf1_nc.jpg">']
+
+    });
+
+    API.addQuestionsSet('thermWhite2',{
+        inherit : 'therm',
+        name: 'Twhite_0to10',
+        stem: ['Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?','<h4>patient1</h4><img class="img-responsive" src="<%=current.baseURL%>bwf1_nc.jpg">']
 
     });
 
@@ -104,15 +134,51 @@ define(['questAPI'], function(Quest){
                     wrapper:true, 
                     data : [
                         {
-                            inherit:'basicPage', 
-                            questions: {inherit:'thermBlack'}
+                            mixer : 'choose',
+                            n:1,
+                            data : [
+                                {
+                                    inherit:'basicPage', 
+                                    questions: {inherit:'thermBlack1'}
+                                },
+                                {   
+                                    inherit: 'basicPage',
+                                    questions: {inherit: 'thermaBlack2'}
+                                },
+                            ]
+                            
+                            
+                            
                         },
                         {
-                            inherit:'basicPage', 
-                            questions: {inherit:'thermWhite'}							
+                            mixer : 'choose',
+                            n:1,
+                            data : [
+                                {
+                                    inherit:'basicPage', 
+                                    questions: {inherit:'thermWhite1'},
+                                },
+                                {
+                                    inherit: 'basicPage',
+                                    questions: {inherit:'thermwhite2'},
+                                }
+                            ]
+                            							
                         },
-                        {   inherit:'basicPage', 
-                            questions: {inherit:'attributes7'}
+                        {   
+                            mixer:'choose',
+                            n:1,
+                            data: [
+                                {
+                                    inherit:'basicPage', 
+                                    questions: {inherit:'attributes1'}
+                                },
+                                {
+                                    inherit:'basicPage', 
+                                    questions: {inherit:'attributes2'},
+                                }
+                            ]
+                            
                         }
                     ]
                 },
