@@ -220,9 +220,10 @@ define(['questAPI','underscore'], function(Quest,_){
             {text:'Christian: Protestant or Other', value:'3'},
             {text:'Hindu', value:'4'},
             {text:'Jewish', value:'5'},
-            {text:'Muslim/Islamic', value:'6'},
-            {text:'Not Religious', value:'7'},
-            {text:'Other Religion', value:'8'}
+            {text:'Mormon/LDS', value:'6'},
+            {text:'Muslim/Islamic', value:'7'},
+            {text:'Not Religious', value:'8'},
+            {text:'Other Religion', value:'9'},
         ]
     });
 
@@ -520,7 +521,7 @@ define(['questAPI','underscore'], function(Quest,_){
     API.addQuestionsSet('eduStudent',{
         inherit: 'singleChoicedrop',
         name: 'eduStudent',
-        stem: 'Please indicate your present student status.',
+        stem: 'Please indicate your present student status',
         answers: [
             {text:'Student in elementary school',value:1},
             {text:'Student in junior high or middle school',value:2},
