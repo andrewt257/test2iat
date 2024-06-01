@@ -70,13 +70,13 @@ define(['questAPI'], function(Quest){
         name: 'attributes7',
         stem: ['Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?','<h4>patient3</h4><img class="img-responsive" src="<%=current.baseURL%>bm3_nc.jpg">'],
         answers: [
-            {text:'I am very likely to prescribe medical cannabinoids',value:7},
-            {text:'I moderately likely to prescribe medical cannabinoids',value:6},
-            {text:'I slightly lilely to prescribe medical cannabinoids',value:5},
-            {text:'I am equally likely to prescribe or not prescribemedical cannabinoids',value:4},
-            {text:'I slightly unlikely to prescribe medical cannabinoids',value:3},
-            {text:'I moderately unlikely to prescribe medical cannabinoids',value:2},
-            {text:'I strongly unlikely to prescribe medical cannabinoids',value:1}
+            {text:'I am very likely to prescribe medical cannabis',value:7},
+            {text:'I moderately likely to prescribe medical cannabis',value:6},
+            {text:'I slightly lilely to prescribe medical cannabis',value:5},
+            {text:'I am equally likely to prescribe or not prescribemedical cannabis',value:4},
+            {text:'I slightly unlikely to prescribe medical cannabis',value:3},
+            {text:'I moderately unlikely to prescribe medical cannabis',value:2},
+            {text:'I strongly unlikely to prescribe medical cannabis',value:1}
         ],
 
     });
