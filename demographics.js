@@ -1108,12 +1108,20 @@ define(['questAPI','underscore'], function(Quest,_){
         inherit:'boolean',
         name: 'militService',
         stem: 'Have you ever served in active duty in the U.S. Armed Forces, military reservs, or National Guard?',
+        answers:[
+            {text:'Yes', value:1},
+            {text:'No', value:0}
+        ]
     });
 
     API.addQuestionsSet('mcPrescribe',{
         inherit:'boolean',
         name: 'mcPrescribe',
         stem:'Have you ever prescribed/provided/recomended medical cannabis to a patient?',
+        answers:[
+            {text:'Yes', value:1},
+            {text:'No', value:0}
+        ]
     });
 
     API.addQuestionsSet('mcKnowledge',{
@@ -1545,7 +1553,7 @@ define(['questAPI','underscore'], function(Quest,_){
         },
         {
             inherit: 'basicPage',
-            questions: [{inherit : 'incomeSelf'}]
+            questions: [{inherit:'incomeSelf'}]
         },
         {
             inherit:'basicPage',
