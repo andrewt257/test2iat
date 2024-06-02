@@ -1093,6 +1093,31 @@ define(['questAPI','underscore'], function(Quest,_){
         stem: 'How many years have you worked under your current job title?',
     });
 
+    API.addQuestionsSet('workStatus',{
+        inherit:'singleChoice',
+        name:'workStatus',
+        stem:'Please indicate your current employment status',
+        answers:[
+            {text:'Employed full-time', value:1},
+            {text:'Employed part-time', value:2},
+            {text:'Not employed, looking for work', value:3},
+            {text:'Not employed, not looking for work', value:4},
+            {text:'Retired', value:5},
+            {text:'Disabled, temporarily', value:6},
+            {text:'Disabled, permanently', value:7}
+        ]
+    });
+
+    API.addQuestionsSet('militService', {
+        inherit:'singleChoice',
+        name: 'militService',
+        stem: 'have you ever served in active duty in the U.S. Armed Forces, military reservs, or National Guard?',
+        answers:[
+            {text:'Yes', value:1},
+            {text:'No', value:0}
+        ]
+    });
+
     if (isTouch) API.addSequence([
         {
             inherit:'basicPage',
@@ -1153,9 +1178,13 @@ define(['questAPI','underscore'], function(Quest,_){
             inherit: 'basicPage',
             questions:[{inherit: 'citStatus'}]
         },
-          {
+        {
             inherit: 'basicPage',
             questions: [{inherit: 'postcodenow'}]
+        },
+        {
+            inherit:'basicPage',
+            questions:[{inherit:'workStatus'}]
         },
         {
             inherit: 'basicPage',
@@ -1269,6 +1298,10 @@ define(['questAPI','underscore'], function(Quest,_){
             questions: [{inherit : 'incomeSelf'}]
         },
         {
+            inherit:'basicPage',
+            quetsions:[{inheriet: 'militService'}]
+        },
+        {
             inherit: 'basicPage',
             questions: [{inherit: 'num'}]
         },
@@ -1345,6 +1378,10 @@ define(['questAPI','underscore'], function(Quest,_){
             questions: [//If required would be set to true, then participants cannot select one and leave the other empty.
                 {inherit: 'postcodenow', required:false},
                 {inherit: 'postcodelong', required:false}]
+        },
+        {
+            inherit:'basicPage',
+            questions:[{inherit:'workStatus'}]
         },
         /**
          * Select occupation
@@ -1459,6 +1496,10 @@ define(['questAPI','underscore'], function(Quest,_){
         {
             inherit: 'basicPage',
             questions: [{inherit : 'incomeSelf'}]
+        },
+        {
+            inherit:'basicPage',
+            quetsions:[{inheriet: 'militService'}]
         },
         {
             inherit: 'basicPage',
