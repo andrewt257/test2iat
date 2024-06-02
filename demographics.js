@@ -1452,7 +1452,8 @@ define(['questAPI','underscore'], function(Quest,_){
                             data: [{inherit: 'occuSelfDetail53'}]
                         }
                     ]
-                }
+                },
+                {inherit: 'workExp'},
             ]
         },
         {
