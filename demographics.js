@@ -1105,7 +1105,7 @@ define(['questAPI','underscore'], function(Quest,_){
     });
 
     API.addQuestionsSet('militService', {
-        inherit:'boolean',
+        inherit:'singleChoice',
         name: 'militService',
         stem: 'Have you ever served in active duty in the U.S. Armed Forces, military reservs, or National Guard?',
         answers:[
@@ -1115,7 +1115,7 @@ define(['questAPI','underscore'], function(Quest,_){
     });
 
     API.addQuestionsSet('mcPrescribe',{
-        inherit:'boolean',
+        inherit:'singleChoice',
         name: 'mcPrescribe',
         stem:'Have you ever prescribed/provided/recomended medical cannabis to a patient?',
         answers:[
