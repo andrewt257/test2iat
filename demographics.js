@@ -18,7 +18,7 @@ define(['questAPI','underscore'], function(Quest,_){
         autoFocus:true, 
         header: 'Demographics',
         numbered: false,
-        progressBar: isTouch ? 'Page <%= pagesMeta.number %> out of 6' : 'Page <%= pagesMeta.number %> out of 14'
+        progressBar: isTouch ? 'Page <%= pagesMeta.number %> out of 6' : 'Page <%= pagesMeta.number %> out of 17'
     });
 
     /**
@@ -592,7 +592,7 @@ define(['questAPI','underscore'], function(Quest,_){
     API.addQuestionsSet('citStatus',{
         inherit: 'singleChoice',
         name: 'citStatus',
-        stem: 'What is your citizenship status?',
+        stem: 'What is your citizenship status in the U.S.?',
         answers: [
             {text:'U.S. citizen by birth', value:1},
             {text:'U.S. citizen by naturalization', value:2},
@@ -1114,7 +1114,7 @@ define(['questAPI','underscore'], function(Quest,_){
         stem: 'Have you ever served in active duty in the U.S. Armed Forces, military reservs, or National Guard?',
         answers:[
             {text:'Yes', value:1},
-            {text:'No', value:0}
+            {text:'No', value:2}
         ]
     });
 
@@ -1124,7 +1124,7 @@ define(['questAPI','underscore'], function(Quest,_){
         stem:'Have you ever prescribed/provided/recomended medical cannabis to a patient?',
         answers:[
             {text:'Yes', value:1},
-            {text:'No', value:0}
+            {text:'No', value:2}
         ]
     });
 
@@ -1133,10 +1133,10 @@ define(['questAPI','underscore'], function(Quest,_){
         name: 'mcKnowledge',
         stem:'How would you qualify your knowledge of medical cannabis?',
         answers:[
-            {text:'Highly knowledgable', value:3},
-            {text:'Moderately knowledgable', value:2},
-            {text:'Slightly knowledgable', value:1},
-            {text:'Not knowledgable', value:0}
+            {text:'Highly knowledgable', value:4},
+            {text:'Moderately knowledgable', value:3},
+            {text:'Slightly knowledgable', value:2},
+            {text:'Not knowledgable', value:1}
         ]
     });
 
@@ -1145,10 +1145,10 @@ define(['questAPI','underscore'], function(Quest,_){
         name: 'cannPersonalnow',
         stem:'Do you currently use cannabis?',
         answers:[
-            {text:'Yes, for recreational use only', value:3},
-            {text:'Yes, for medical use only', value:2},
-            {text:'Yes, for both recreational and medical use', value:1},
-            {text:'No', value:0}
+            {text:'Yes, for recreational use only', value:4},
+            {text:'Yes, for medical use only', value:3},
+            {text:'Yes, for both recreational and medical use', value:2},
+            {text:'No', value:1}
         ]
     });
 
@@ -1157,10 +1157,10 @@ define(['questAPI','underscore'], function(Quest,_){
         name: 'cannPersonalever',
         stem:'Have you ever, even once, used cannabis?',
         answers:[
-            {text:'Yes, for recreational use only', value:3},
-            {text:'Yes, for medical use only', value:2},
-            {text:'Yes, for both recreational and medical use', value:1},
-            {text:'No', value:0}
+            {text:'Yes, for recreational use only', value:4},
+            {text:'Yes, for medical use only', value:3},
+            {text:'Yes, for both recreational and medical use', value:2},
+            {text:'No', value:1}
         ]
     });
 
@@ -1341,31 +1341,31 @@ define(['questAPI','underscore'], function(Quest,_){
         },
         {
             inherit: 'basicPage',
-            questions: [{inherit : 'incomeSelf'}]
+            questions: [{inherit:'incomeSelf'}]
         },
         {
             inherit:'basicPage',
-            quetsions:[{inheriet: 'militService'}]
+            quetsions:[{inheriet:'militService'}]
         },
         {
             inherit:'basicPage',
-            quetsions:[{inheriet: 'mcPrescribe'}]
+            quetsions:[{inheriet:'mcPrescribe'}]
         },
         {
             inherit:'basicPage',
-            quetsions:[{inheriet: 'mcKnowledge'}]
+            quetsions:[{inheriet:'mcKnowledge'}]
         },
         {
             inherit:'basicPage',
-            quetsions:[{inheriet: 'cannPersonalnow'}]
+            quetsions:[{inheriet:'cannPersonalnow'}]
         },
         {
             inherit:'basicPage',
-            quetsions:[{inheriet: 'cannPersonalever'}]
+            quetsions:[{inheriet:'cannPersonalever'}]
         },
         {
             inherit: 'basicPage',
-            questions: [{inherit: 'num'}]
+            questions: [{inherit:'num'}]
         },
     ]);
 
