@@ -166,7 +166,20 @@ define(['questAPI','underscore'], function(Quest,_){
             {text:'Unknown',value:3}
         ]
     });
+API.addQuestionsSet('maritalStatus',{
+    inherit: 'singleChoice',
+    name: 'maritalStatus',
+    stem: 'What is your marital status?',
+    answers: [
+        {text:'Single/never married', value:0},
+        {text:'Married', value:1},
+        {text:'Domestic partnership/civil union', value:2},
+        {text:'Separated', value:3},
+        {text:'Divorced', value:4},
+        {text:'Widowed', value:5},
+    ]
 
+})
     API.addQuestionsSet('politicalid',{
         inherit: 'singleChoice',
         name: 'politicalid7',
@@ -1059,6 +1072,10 @@ define(['questAPI','underscore'], function(Quest,_){
             ]
         },
         {
+            inherit:'basicPage',
+            questions: [{inherit:'maritalStatus'}]
+        },
+        {
             inherit: 'basicPage',
             questions: [{inherit: 'politicalid'}]
         }
@@ -1095,6 +1112,12 @@ define(['questAPI','underscore'], function(Quest,_){
             ]
         },
         {
+            inherit:'basicPage',
+            questions: [
+                {inherit:'maritalStatus'},
+            ]
+        },
+        {
             inherit: 'basicPage',
             questions: [{inherit: 'num'}]
         },
@@ -1123,11 +1146,6 @@ define(['questAPI','underscore'], function(Quest,_){
                 {inherit: 'postcodenow', required:false},
                 {inherit: 'postcodelong', required:false}]
         },
-        {
-            inherit: 'basicPage',
-            questions: [{inherit: 'edu'}]
-        },
-
         /**
          * Select occupation
          */
