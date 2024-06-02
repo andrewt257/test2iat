@@ -674,10 +674,10 @@ define(['questAPI','underscore'], function(Quest,_){
         stem: 'What is your job title?.',
         numericValues:false,
         answers: [
-            {text:'Doctor of Medicine (MD)', value:'43-'},
-            {text:'Doctor of Ostepathic Medicine (DO)', value:'27-'},
-            {text:'Nurse Practitioner (NP)', value:'13-'},
-            {text:'Physician Associate (PA)', value:'15-'},
+            {text:'Doctor of Medicine (MD)', value:'1-'},
+            {text:'Doctor of Ostepathic Medicine (DO)', value:'2-'},
+            {text:'Nurse Practitioner (NP)', value:'3-'},
+            {text:'Physician Associate (PA)', value:'4-'},
             {text:'Construction/Extraction', value:'47-'},
             {text:'Education', value:'25-'},
             {text:'Engineers/Architects', value:'17-'},
@@ -732,22 +732,22 @@ define(['questAPI','underscore'], function(Quest,_){
         {text:'Other', value:0}
     ];
 
-    API.addQuestionsSet('occuSelfDetail43',{
+    API.addQuestionsSet('occuSelfDetail1',{
         inherit: 'occupationCategory',
         answers: medSpecialties
     });
 
-    API.addQuestionsSet('occuSelfDetail27',{
+    API.addQuestionsSet('occuSelfDetail2',{
         inherit: 'occupationCategory',
         answers: medSpecialties
     });
 
-    API.addQuestionsSet('occuSelfDetail13',{
+    API.addQuestionsSet('occuSelfDetail3',{
         inherit: 'occupationCategory',
         answers: medSpecialties
     });
 
-    API.addQuestionsSet('occuSelfDetail15',{
+    API.addQuestionsSet('occuSelfDetail4',{
         inherit: 'occupationCategory',
         answers: medSpecialties
     });
@@ -957,24 +957,24 @@ define(['questAPI','underscore'], function(Quest,_){
             'If that person is retired or otherwise not presently employed, please answer by indicating that person\'s previous employment.'
     });
 
-    API.addQuestionsSet('occuSupporterDetail43',{
-        inherit: 'occuSelfDetail43',
-        name : 'occuSupporterDetail43'
+    API.addQuestionsSet('occuSupporterDetail1',{
+        inherit: 'occuSelfDetail1',
+        name : 'occuSupporterDetail1'
     });
 
-    API.addQuestionsSet('occuSupporterDetail27',{
-        inherit: 'occuSelfDetail27',
-        name : 'occuSupporterDetail27'
+    API.addQuestionsSet('occuSupporterDetail2',{
+        inherit: 'occuSelfDetail2',
+        name : 'occuSupporterDetail2'
     });
 
-    API.addQuestionsSet('occuSupporterDetail13',{
-        inherit: 'occuSelfDetail13',
-        name : 'occuSupporterDetail13'
+    API.addQuestionsSet('occuSupporterDetail3',{
+        inherit: 'occuSelfDetail3',
+        name : 'occuSupporterDetail3'
     });
 
-    API.addQuestionsSet('occuSupporterDetail15',{
-        inherit: 'occuSelfDetail15',
-        name : 'occuSupporterDetail15'
+    API.addQuestionsSet('occuSupporterDetail4',{
+        inherit: 'occuSelfDetail4',
+        name : 'occuSupporterDetail4'
     });
 
     API.addQuestionsSet('occuSupporterDetail47',{
@@ -1223,19 +1223,19 @@ define(['questAPI','underscore'], function(Quest,_){
                     remix:true,
                     branches: [
                         {
-                            conditions:[{compare: 'questions.occuSelf.response',to:'43-'}],
+                            conditions:[{compare: 'questions.occuSelf.response',to:'1-'}],
                             data: [{inherit: 'occuSelfDetail43'}]
                         },
                         {
-                            conditions:[{compare: 'questions.occuSelf.response',to:'27-'}],
+                            conditions:[{compare: 'questions.occuSelf.response',to:'2-'}],
                             data: [{inherit: 'occuSelfDetail27'}]
                         },
                         {
-                            conditions:[{compare: 'questions.occuSelf.response',to:'13-'}],
+                            conditions:[{compare: 'questions.occuSelf.response',to:'3-'}],
                             data: [{inherit: 'occuSelfDetail13'}]
                         },
                         {
-                            conditions:[{compare: 'questions.occuSelf.response',to:'15-'}],
+                            conditions:[{compare: 'questions.occuSelf.response',to:'4-'}],
                             data: [{inherit: 'occuSelfDetail15'}]
                         },
                         {
