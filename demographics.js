@@ -988,40 +988,6 @@ define(['questAPI','underscore'], function(Quest,_){
         ]
     });
 
-    API.addQuestionsSet('incomeSupporter',{
-        inherit: 'incomeSelf',
-        name: 'incomeSupporter',
-        stem: 'Please estimate as best you can the yearly income of the person who is most responsible for your support.'
-    });
-
-    API.addQuestionsSet('wealthSelf',{
-        inherit: 'singleChoicedrop',
-        name: 'wealthSelf',
-        stem: 'Please indicate your overall net worth (assets minus debts).',
-        answers: [
-            {text:'More than $50 Million',value:1},
-            {text:'$25 to 50 Million',value:2},
-            {text:'$10 to 25 Million',value:3},
-            {text:'$5 to 10 Million',value:4},
-            {text:'$1 to 5 Million',value:5},
-            {text:'$500,000 to 1 Million',value:6},
-            {text:'$100,000 to 500,000',value:7},
-            {text:'$50,000 to 100,000',value:8},
-            {text:'$40,000 to 50,000',value:9},
-            {text:'$30,000 to 40,000',value:10},
-            {text:'$20,000 to 30,000',value:11},
-            {text:'$10,000 to 20,000',value:12},
-            {text:'$5,000 to 10,000',value:13},
-            {text:'$0 to 5,000',value:14}
-        ]
-    });
-
-    API.addQuestionsSet('wealthSupporter',{
-        inherit: 'wealthSelf',
-        name: 'wealthSupporter',
-        stem: 'Please estimate as best you can the overall net worth (assets minus debts) of the person who is most responsible for your support.'
-    });
-
     if (isTouch) API.addSequence([
         {
             inherit: 'basicPage',
@@ -1231,6 +1197,10 @@ define(['questAPI','underscore'], function(Quest,_){
                     ]
                 }
             ]
+        },
+        {
+            inherit: 'basicPage',
+            questions: [{inherit : 'incomeSelf'}]
         }
     ]);
 
