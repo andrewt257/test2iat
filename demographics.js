@@ -729,6 +729,7 @@ define(['questAPI','underscore'], function(Quest,_){
         {text:'Radiation oncology', value:18},
         {text:'Surgery', value:19},
         {text:'Urology', value:20},
+        {text:'Other', value:0}
     ];
 
     API.addQuestionsSet('occuSelfDetail43',{
