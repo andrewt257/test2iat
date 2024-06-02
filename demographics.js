@@ -1337,19 +1337,19 @@ define(['questAPI','underscore'], function(Quest,_){
         },
         {
             inherit:'basicPage',
-            questions:[{inherit:'mcPrescribe'}]
+            questions: [{inherit:'mcPrescribe'}]
         },
         {
             inherit:'basicPage',
-            questions:[{inherit:'mcKnowledge'}]
+            questions: [{inherit:'mcKnowledge'}]
         },
         {
             inherit:'basicPage',
-            questions:[{inherit:'cannPersonalnow'}]
+            questions: [{inherit:'cannPersonalnow'}]
         },
         {
             inherit:'basicPage',
-            questions:[{inherit:'cannPersonalever'}]
+            questions: [{inherit:'cannPersonalever'}]
         },
         {
             inherit: 'basicPage',
