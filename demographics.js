@@ -1129,10 +1129,10 @@ define(['questAPI','underscore'], function(Quest,_){
         name: 'mcKnowledge',
         stem:'How would you qualify your knowledge of medical cannabis?',
         answers:[
-            {text:'Highly knowledgable', value:4},
-            {text:'Moderately knowledgable', value:3},
-            {text:'Slightly knowledgable', value:2},
-            {text:'Not knowledgable', value:1}
+            {text:'Highly knowledgable', value:3},
+            {text:'Moderately knowledgable', value:2},
+            {text:'Slightly knowledgable', value:1},
+            {text:'Not knowledgable', value:0}
         ]
     });
 
