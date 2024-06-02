@@ -606,10 +606,6 @@ define(['questAPI','underscore'], function(Quest,_){
         inherit: 'boolean',
         name: 'studentOrNot',
         stem: 'Are you presently a student in a primary school, secondary school, college, or graduate degree program?',
-        answers: [
-            {text:'Yes', value:1},
-            {text:'No', value:2}
-        ]
     });
 
     API.addQuestionsSet('eduStudent',{
@@ -1112,20 +1108,12 @@ define(['questAPI','underscore'], function(Quest,_){
         inherit:'boolean',
         name: 'militService',
         stem: 'Have you ever served in active duty in the U.S. Armed Forces, military reservs, or National Guard?',
-        answers:[
-            {text:'Yes', value:1},
-            {text:'No', value:2}
-        ]
     });
 
     API.addQuestionsSet('mcPrescribe',{
         inherit:'boolean',
         name: 'mcPrescribe',
         stem:'Have you ever prescribed/provided/recomended medical cannabis to a patient?',
-        answers:[
-            {text:'Yes', value:1},
-            {text:'No', value:2}
-        ]
     });
 
     API.addQuestionsSet('mcKnowledge',{
@@ -1145,10 +1133,10 @@ define(['questAPI','underscore'], function(Quest,_){
         name: 'cannPersonalnow',
         stem:'Do you currently use cannabis?',
         answers:[
-            {text:'Yes, for recreational use only', value:4},
-            {text:'Yes, for medical use only', value:3},
-            {text:'Yes, for both recreational and medical use', value:2},
-            {text:'No', value:1}
+            {text:'Yes, for recreational use only', value:2},
+            {text:'Yes, for medical use only', value:1},
+            {text:'Yes, for both recreational and medical use', value:3},
+            {text:'No', value:0}
         ]
     });
 
@@ -1157,10 +1145,10 @@ define(['questAPI','underscore'], function(Quest,_){
         name: 'cannPersonalever',
         stem:'Have you ever, even once, used cannabis?',
         answers:[
-            {text:'Yes, for recreational use only', value:4},
-            {text:'Yes, for medical use only', value:3},
-            {text:'Yes, for both recreational and medical use', value:2},
-            {text:'No', value:1}
+            {text:'Yes, for recreational use only', value:2},
+            {text:'Yes, for medical use only', value:1},
+            {text:'Yes, for both recreational and medical use', value:3},
+            {text:'No', value:0}
         ]
     });
 
