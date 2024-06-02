@@ -1111,9 +1111,55 @@ define(['questAPI','underscore'], function(Quest,_){
     API.addQuestionsSet('militService', {
         inherit:'singleChoice',
         name: 'militService',
-        stem: 'have you ever served in active duty in the U.S. Armed Forces, military reservs, or National Guard?',
+        stem: 'Have you ever served in active duty in the U.S. Armed Forces, military reservs, or National Guard?',
         answers:[
             {text:'Yes', value:1},
+            {text:'No', value:0}
+        ]
+    });
+
+    API.addQuestionsSet('mcPrescribe',{
+        inherit:'singleChoice',
+        name: 'mcPrescribe',
+        stem:'Have you ever prescribed/provided/recomended medical cannabis to a patient?',
+        answers:[
+            {text:'Yes', value:1},
+            {text:'No', value:0}
+        ]
+    });
+
+    API.addQuestionsSet('mcKnowledge',{
+        inherit:'singleChoice',
+        name: 'mcKnowledge',
+        stem:'How would you qualify your knowledge of medical cannabis?',
+        answers:[
+            {text:'Highly knowledgable', value:3},
+            {text:'Moderately knowledgable', value:2},
+            {text:'Slightly knowledgable', value:1},
+            {text:'Not knowledgable', value:0}
+        ]
+    });
+
+    API.addQuestionsSet('cannPersonalnow',{
+        inherit:'singleChoice',
+        name: 'cannPersonalnow',
+        stem:'Do you currently use cannabis?',
+        answers:[
+            {text:'Yes, for recreational use only', value:3},
+            {text:'Yes, for medical use only', value:2},
+            {text:'Yes, for both recreational and medical use', value:1},
+            {text:'No', value:0}
+        ]
+    });
+
+    API.addQuestionsSet('cannPersonalever',{
+        inherit:'singleChoice',
+        name: 'cannPersonalever',
+        stem:'Have you ever, even once, used cannabis?',
+        answers:[
+            {text:'Yes, for recreational use only', value:3},
+            {text:'Yes, for medical use only', value:2},
+            {text:'Yes, for both recreational and medical use', value:1},
             {text:'No', value:0}
         ]
     });
@@ -1300,6 +1346,22 @@ define(['questAPI','underscore'], function(Quest,_){
         {
             inherit:'basicPage',
             quetsions:[{inheriet: 'militService'}]
+        },
+        {
+            inherit:'basicPage',
+            quetsions:[{inheriet: 'mcPrescribe'}]
+        },
+        {
+            inherit:'basicPage',
+            quetsions:[{inheriet: 'mcKnowledge'}]
+        },
+        {
+            inherit:'basicPage',
+            quetsions:[{inheriet: 'cannPersonalnow'}]
+        },
+        {
+            inherit:'basicPage',
+            quetsions:[{inheriet: 'cannPersonalever'}]
         },
         {
             inherit: 'basicPage',
@@ -1500,6 +1562,22 @@ define(['questAPI','underscore'], function(Quest,_){
         {
             inherit:'basicPage',
             quetsions:[{inheriet: 'militService'}]
+        },
+        {
+            inherit:'basicPage',
+            quetsions:[{inheriet: 'mcPrescribe'}]
+        },
+        {
+            inherit:'basicPage',
+            quetsions:[{inheriet: 'mcKnowledge'}]
+        },
+        {
+            inherit:'basicPage',
+            quetsions:[{inheriet: 'cannPersonalnow'}]
+        },
+        {
+            inherit:'basicPage',
+            quetsions:[{inheriet: 'cannPersonalever'}]
         },
         {
             inherit: 'basicPage',
