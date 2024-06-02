@@ -483,19 +483,71 @@ define(['questAPI','underscore'], function(Quest,_){
         answers: countriesArray
     });
 
+    var statesArray = [
+        {text: 'Alabama', value:1},
+        {text:'Alaska', value:2},
+        {text:'Arizona', value:3},
+        {text:'Arkansas', value:4},
+        {text:'California', value:5},
+        {text:'Colorado', value:6},
+        {text:'Connecticut', value:7},
+        {text:'Delaware', value:8},
+        {text:'Florida', value:9},
+        {text:'Georgia', value:10},
+        {text:'Hawaii', value:11},
+        {text:'Idaho', value:12},
+        {text:'Illinois', value:13},
+        {text:'Indiana', value:14},
+        {text:'Iowa', value:15},
+        {text:'Kansas', value:16},
+        {text:'Kentucky', value:17},
+        {text:'Louisiana', value:18},
+        {text:'Maine', value:19},
+        {text:'Maryland', value:20},
+        {text:'Massachusetts', value:21},
+        {text:'Michigan', value:22},
+        {text:'Minnesota', value:23},
+        {text:'Mississippi', value:24},
+        {text:'Missouri', value:25},
+        {text:'Montana', value:26},
+        {text:'Nebraska', value:27},
+        {text:'Nevada', value:28},
+        {text:'New Hampshire', value:29},
+        {text:'New Jersey', value:30},
+        {text:'New Mexico', value:31},
+        {text:'New York', value:32},
+        {text:'North Carolina', value:33},
+        {text:'North Dakota', value:34},
+        {text:'Ohio', value:35},
+        {text:'Oklahoma', value:36},
+        {text:'Oregon', value:37},
+        {text:'Pennsylvania', value:38},
+        {text:'Rhode Island', value:39},
+        {text:'South Carolina', value:40},
+        {text:'South Dakota', value:41},
+        {text:'Tennessee', value:42},
+        {text:'Texas', value:43},
+        {text:'Utah', value:44},
+        {text:'Vermont', value:45},
+        {text:'Virginia', value:46},
+        {text:'Washington', value:47},
+        {text:'West Virginia', value:48},
+        {text:'Wisconsin', value:49},
+        {text:'Wyoming', value:50},
+    ]
     API.addQuestionsSet('postcodenow',{
-        inherit: 'text',
+        inherit: 'singleChoicedrop',
         name: 'postcodenow',
-        stem: 'What is the postal code of your primary residence?'
+        stem: 'In what state is your primary residence located?',
+        answers: statesArray
     });
 
     API.addQuestionsSet('postcodelong',{
-        inherit: 'text',
+        inherit: 'singleChoicedrop',
         name: 'postcodelong',
-        stem: 'What is the postal code where you have lived the longest?'
+        stem: 'In what state do you practice medicine?',
+        answers: statesArray
     });
-
-    
 
     API.addQuestionsSet('studentOrNot',{
         inherit: 'singleChoice',
@@ -1016,17 +1068,16 @@ define(['questAPI','underscore'], function(Quest,_){
         {
             inherit: 'basicPage',
             questions: [
-                {inherit: 'birthSex', helpText: '', autoSubmit:false}, 
-                {inherit: 'genderIdentity', autoSubmit:false}
+                {inherit: 'birthMonth'},
+                {inherit: 'birthYear'}
             ]
         },
         {
             inherit: 'basicPage',
-            questions: [{inherit: 'birthMonth'}]
-        },
-        {
-            inherit: 'basicPage',
-            questions: [{inherit: 'birthYear'}]
+            questions: [
+                {inherit: 'birthSex', helpText: '', autoSubmit:false}, 
+                {inherit: 'genderIdentity', autoSubmit:false}
+            ]
         },
         {
             inherit: 'basicPage',
@@ -1061,11 +1112,10 @@ define(['questAPI','underscore'], function(Quest,_){
         },
         {
             inherit: 'basicPage',
-            questions: [{inherit: 'countrycit'}]
-        },
-        {
-            inherit: 'basicPage',
-            questions: [{inherit: 'countryres'}]
+            questions: [
+                {inherit: 'countrycit'},
+                {inherit: 'countryres'}
+            ]
         },
         {
             inherit: 'basicPage',
