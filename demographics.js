@@ -18,7 +18,7 @@ define(['questAPI','underscore'], function(Quest,_){
         autoFocus:true, 
         header: 'Demographics',
         numbered: false,
-        progressBar: isTouch ? 'Page <%= pagesMeta.number %> out of 6' : 'Page <%= pagesMeta.number %> out of 13'
+        progressBar: isTouch ? 'Page <%= pagesMeta.number %> out of 6' : 'Page <%= pagesMeta.number %> out of 14'
     });
 
     /**
@@ -90,10 +90,8 @@ define(['questAPI','underscore'], function(Quest,_){
         answers: [
             {text:'Male',value:1},
             {text:'Female',value:2}, 
-            {text:'Trans male/Trans man',value:3}, 
-            {text:'Trans female/Trans woman',value:4}, 
-            {text:'Genderqueer/Gender nonconforming',value:5}, 
-            {text:'A different identity',value:6}
+            {text:'Trans gender',value:3}, 
+            {text:'Other',value:4}, 
         ]
     });
 
@@ -136,7 +134,7 @@ define(['questAPI','underscore'], function(Quest,_){
             {text:'South Asian',value:3},
             {text:'Native Hawaiian or other Pacific Islander',value:4},
             {text:'Black or African American',value:5},
-            {text:'White',value:6},
+            {text:'White or European American',value:6},
             {text:'Other or Unknown',value:7},
             {text:'Multiracial',value:8}
         ]
@@ -152,7 +150,7 @@ define(['questAPI','underscore'], function(Quest,_){
             {text:'South Asian',value:3},
             {text:'Native Hawaiian or other Pacific Islander',value:4},
             {text:'Black or African American',value:5},
-            {text:'White',value:6},
+            {text:'White or European American',value:6},
             {text:'Other or Unknown',value:7}
         ]
     });
@@ -161,10 +159,10 @@ define(['questAPI','underscore'], function(Quest,_){
         inherit: isTouch ? 'singleChoice' : 'singleChoicedrop',
         name: 'ethnicityomb',
         autoSubmit: false,
-        stem: 'What is your ethnicity?',
+        stem: 'Are you of Hispanic/Latino origin?',
         answers: [
-            {text:'Hispanic or Latino',value:1},
-            {text:'Not Hispanic or Latino',value:2},
+            {text:'Yes',value:1},
+            {text:'No',value:2},
             {text:'Unknown',value:3}
         ]
     });
@@ -497,16 +495,7 @@ define(['questAPI','underscore'], function(Quest,_){
         stem: 'What is the postal code where you have lived the longest?'
     });
 
-    API.addQuestionsSet('financialsupport',{
-        inherit: 'singleChoice',
-        name: 'financialsupport',
-        stem: 'How do you support yourself financially?',
-        answers: [
-            {text:'Self-supported',value:1},
-            {text:'Supported by parents, relatives or other guardians',value:2},
-            {text:'Supported by partner',value:3}
-        ]
-    });
+    
 
     API.addQuestionsSet('studentOrNot',{
         inherit: 'singleChoice',
@@ -577,13 +566,13 @@ define(['questAPI','underscore'], function(Quest,_){
     API.addQuestionsSet('occuSelf',{
         inherit: 'singleChoicedrop',
         name: 'occuSelf',
-        stem: 'Please indicate your full-time or part-time occupation.  If you are now retired please answer by indicating your last full-time job.  If you were previously employed and are not presently employed, please indicate your last part-time or full-time job.',
+        stem: 'What is your job title?.',
         numericValues:false,
         answers: [
-            {text:'Administrative Support', value:'43-'},
-            {text:'Arts/Design/Entertainment/Sports', value:'27-'},
-            {text:'Business', value:'13-'},
-            {text:'Computer/Math', value:'15-'},
+            {text:'Doctor of Medicine (MD)', value:'43-'},
+            {text:'Doctor of Ostepathic Medicine (DO)', value:'27-'},
+            {text:'Nurse Practitioner (NP)', value:'13-'},
+            {text:'Physician Associate (PA)', value:'15-'},
             {text:'Construction/Extraction', value:'47-'},
             {text:'Education', value:'25-'},
             {text:'Engineers/Architects', value:'17-'},
@@ -611,7 +600,7 @@ define(['questAPI','underscore'], function(Quest,_){
         inherit: 'singleChoicedrop',
         required:false,
         name: 'occuSelfDetail',
-        stem: 'Please select the most appropriate occupation category:'
+        stem: 'What is your specialty?:'
     });
 
     API.addQuestionsSet('occuSelfDetail43',{
