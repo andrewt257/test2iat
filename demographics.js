@@ -117,9 +117,11 @@ define(['questAPI','underscore'], function(Quest,_){
     });
 
     API.addQuestionsSet('birthYear',{
-        inherit: 'text',
+        inherit: 'singleChoicedrop',
         name: 'birthyear',
-        stem: 'What is your birth year?',});
+        stem: 'What is your birth year?',
+        answers: _.range((new Date()).getFullYear()-5, 1910, -1) // use underscore to create an array of years from ten years ago back to 1910
+    });
 
     API.addQuestionsSet('raceomb',{
         inherit: 'singleChoicedrop',
