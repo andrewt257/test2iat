@@ -1333,23 +1333,23 @@ define(['questAPI','underscore'], function(Quest,_){
         },
         {
             inherit:'basicPage',
-            quetsions:[{inheriet:'militService'}]
+            quetsions:[{inherit:'militService'}]
         },
         {
             inherit:'basicPage',
-            quetsions:[{inheriet:'mcPrescribe'}]
+            quetsions:[{inherit:'mcPrescribe'}]
         },
         {
             inherit:'basicPage',
-            quetsions:[{inheriet:'mcKnowledge'}]
+            quetsions:[{inherit:'mcKnowledge'}]
         },
         {
             inherit:'basicPage',
-            quetsions:[{inheriet:'cannPersonalnow'}]
+            quetsions:[{inherit:'cannPersonalnow'}]
         },
         {
             inherit:'basicPage',
-            quetsions:[{inheriet:'cannPersonalever'}]
+            quetsions:[{inherit:'cannPersonalever'}]
         },
         {
             inherit: 'basicPage',
@@ -1549,23 +1549,23 @@ define(['questAPI','underscore'], function(Quest,_){
         },
         {
             inherit:'basicPage',
-            quetsions:[{inheriet: 'militService'}]
+            quetsions:[{inherit: 'militService'}]
         },
         {
             inherit:'basicPage',
-            quetsions:[{inheriet: 'mcPrescribe'}]
+            quetsions:[{inherit: 'mcPrescribe'}]
         },
         {
             inherit:'basicPage',
-            quetsions:[{inheriet: 'mcKnowledge'}]
+            quetsions:[{inherit: 'mcKnowledge'}]
         },
         {
             inherit:'basicPage',
-            quetsions:[{inheriet: 'cannPersonalnow'}]
+            quetsions:[{inherit: 'cannPersonalnow'}]
         },
         {
             inherit:'basicPage',
-            quetsions:[{inheriet: 'cannPersonalever'}]
+            quetsions:[{inherit: 'cannPersonalever'}]
         },
         {
             inherit: 'basicPage',
