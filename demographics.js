@@ -589,6 +589,19 @@ define(['questAPI','underscore'], function(Quest,_){
         answers: statesArray
     });
 
+    API.addQuestionsSet('citStatus',{
+        inherit: 'singleChoice',
+        name: 'citStatus',
+        stem: 'What is your citizenship status?',
+        answers: [
+            {text:'U.S. citizen by birth', value:1},
+            {text:'U.S. citizen by naturalization', value:2},
+            {text:'Documented permanet resident', value:3},
+            {text:'Documented temporary resident', value:4},
+            {text:'Undocumented resident', value:5},
+        ]
+    });
+
     API.addQuestionsSet('studentOrNot',{
         inherit: 'singleChoice',
         name: 'studentOrNot',
@@ -695,43 +708,74 @@ define(['questAPI','underscore'], function(Quest,_){
         stem: 'What is your specialty?:'
     });
 
+    var medSpecialties = [
+        {text:'Internal Medicine', value:1},
+        {text:'Family Medicine', vlaue:2},
+        {text:'Pediatrics', value:3},
+        {text:'Emergency Medicine', value:4},
+        {text:'OB-GYN', value:5},
+        {text:'Anesthesiology', value:6},
+        {text:'Psychiatry', value:7},
+        {text:'Radiology and diagnostics', value:8},
+        {text:'General Surgery', value:9},
+        {text:'Cardiovascular disease', value:10},
+        {text:'Ophthalmology', value:11},
+        {text:'Orthopedic Surgery', value:12},
+        {text:'Hematology and oncology', value:13},
+        {text:'Gastroenterology', value:14},
+        {text:'Critical care', value:15},
+        {text:'Neurology', value:16},
+        {text:'Dermatology', value:17},
+        {text:'Anatomic/clinical pathology', value:18},
+        {text:'Nephrology', value:19},
+        {text:'Urology', value:20},
+        {text:'Child and adolescent psychiatry', value:21},
+        {text:'Infectious disease', value:22},
+        {text:'Physical medicine and rehabilitation', value:23},
+        {text:'Otolaryngology', value:24},
+        {text:'Endocrinology, diabetes, and metabolism', value:25},
+        {text:'Plastic surgery', value:26},
+        {text:'Preventive medicine', value:27},
+        {text:'Rheumatology', value:28},
+        {text:'Pain Management', value:29},
+        {text:'Geriatric medicine', value:30},
+        {text:'Neonatal medicine', value:31},
+        {text:'Neurological surgery', value:32},
+        {text:'Internal medicine/pediatrics', value:33},
+        {text:'Radiation oncology', value:34},
+        {text:'Allergy and immunology', value:35},
+        {text:'Pulmonary disease', value:36},
+        {text:'Interventional cardiology', value:37},
+        {text:'Thoracic surgery', value:38},
+        {text:'Neuroradiology', value:39},
+        {text:'Vascular surgery', value:40},
+        {text:'Vascular and interventional radiology', value:41},
+        {text:'Sports medicine', value:42},
+        {text:'Pediatric hematology/oncology', value:43},
+        {text:'Pediatric cardiology', value:44},
+        {text:'Pediatric anesthesiology', value:45},
+        {text:'Pediatric critical care medicine', value:46},
+        {text:'Clinical cardiac electrophysiology', value:47},
+    ];
+
     API.addQuestionsSet('occuSelfDetail43',{
         inherit: 'occupationCategory',
-        answers: [
-            {text:'Supervisors', value:'43-1000'},
-            {text:'Financial Clerks', value:'43-3000'},
-            {text:'Information and Records', value:'43-4000'},
-            {text:'Recording, Scheduling, Dispatching, Distributing', value:'43-5000'},
-            {text:'Secretaries and Assistants', value:'43-6000'},
-            {text:'Other Support (data entry, office clerk, proofreaders)', value:'43-7000'}
-        ]
+        answers: medSpecialties
     });
 
     API.addQuestionsSet('occuSelfDetail27',{
         inherit: 'occupationCategory',
-        answers: [
-            {text:'Art and Design', value:'27-1000'},
-            {text:'Entertainers and Performers', value:'27-2000'},
-            {text:'Media and communication', value:'27-3000'},
-            {text:'Media Equipment workers', value:'27-4000'}
-        ]
+        answers: medSpecialties
     });
 
     API.addQuestionsSet('occuSelfDetail13',{
         inherit: 'occupationCategory',
-        answers: [
-            {text:'Business Operations', value:'13-1000'},
-            {text:'Financial Specialists', value:'13-2000'}
-        ]
+        answers: medSpecialties
     });
 
     API.addQuestionsSet('occuSelfDetail15',{
         inherit: 'occupationCategory',
-        answers: [
-            {text:'Computer Specialists', value:'15-1000'},
-            {text:'Math Scientists', value:'15-2000'},
-            {text:'Math Technicians', value:'15-3000'}
-        ]
+        answers: medSpecialties
     });
 
     API.addQuestionsSet('occuSelfDetail47',{
@@ -1114,6 +1158,10 @@ define(['questAPI','underscore'], function(Quest,_){
             inherit: 'basicPage',
             questions: [{inherit: 'politicalParty'}]
         },
+        {
+            inherit: 'basicPage',
+            questions:[{inherit: 'citStatus'}]
+        },
     ]);
 
     if (!isTouch) API.addSequence([
@@ -1176,6 +1224,10 @@ define(['questAPI','underscore'], function(Quest,_){
                 {inherit: 'countrycit'},
                 {inherit: 'countryres'}
             ]
+        },
+        {
+            inherit: 'basicPage',
+            questions:[{inherit: 'citStatus'}]
         },
         {
             inherit: 'basicPage',
