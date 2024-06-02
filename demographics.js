@@ -166,7 +166,8 @@ define(['questAPI','underscore'], function(Quest,_){
             {text:'Unknown',value:3}
         ]
     });
-API.addQuestionsSet('maritalStatus',{
+
+    API.addQuestionsSet('maritalStatus',{
     inherit: 'singleChoice',
     name: 'maritalStatus',
     stem: 'What is your marital status?',
@@ -178,8 +179,21 @@ API.addQuestionsSet('maritalStatus',{
         {text:'Divorced', value:4},
         {text:'Widowed', value:5},
     ]
+    });
 
-})
+    API.addQuestionsSet('numChildren',{
+        inherit: 'singleChoice',
+        name: 'numChildren',
+        stem: 'How many children do you have?',
+        answers: [
+            {text:'0', value:0},
+            {text:'1', value:1},
+            {text:'2', value:2},
+            {text:'3', value:3},
+            {text:'4', value:4},
+            {text:'5 or more', value:5}
+        ]
+    })
     API.addQuestionsSet('politicalid',{
         inherit: 'singleChoice',
         name: 'politicalid7',
@@ -195,6 +209,19 @@ API.addQuestionsSet('maritalStatus',{
         ]
     });
 
+    API.addQuestionsSet('politicalParty',{
+        inherit:'singleChoice',
+        name: 'politicalParty',
+        stem: 'What is your political party affiliation?',
+        answers: [
+            {text:'Democratic Party', value:1},
+            {text:'Republican Party', value:2},
+            {text:'Libertarian Party', value:3},
+            {text:'Independent/no party affiliation', value:4},
+            {text:'Not registered to vote', value:4},
+            {text:'Other', value:5}
+        ]
+    });
     API.addQuestionsSet('num',{
         inherit: 'singleChoice',
         name: 'num002',
@@ -1076,9 +1103,17 @@ API.addQuestionsSet('maritalStatus',{
             questions: [{inherit:'maritalStatus'}]
         },
         {
+            inherit:'basicPage',
+            questions:[{inherit:'numChildren'}]
+        },
+        {
             inherit: 'basicPage',
             questions: [{inherit: 'politicalid'}]
-        }
+        },
+        {
+            inherit: 'basicPage',
+            questions: [{inherit: 'politicalParty'}]
+        },
     ]);
 
     if (!isTouch) API.addSequence([
@@ -1113,17 +1148,19 @@ API.addQuestionsSet('maritalStatus',{
         },
         {
             inherit:'basicPage',
-            questions: [
-                {inherit:'maritalStatus'},
-            ]
+            questions: [{inherit:'maritalStatus'}]
         },
         {
-            inherit: 'basicPage',
-            questions: [{inherit: 'num'}]
+            inherit:'basicPage',
+            questions: [{inherit:'numChildren'}]
         },
         {
             inherit: 'basicPage',
             questions: [{inherit: 'politicalid'}]
+        },
+        {
+            inherit: 'basicPage',
+            questions: [{inherit: 'politicalParty'}]
         },
         {
             inherit: 'basicPage',
@@ -1258,7 +1295,11 @@ API.addQuestionsSet('maritalStatus',{
         {
             inherit: 'basicPage',
             questions: [{inherit : 'incomeSelf'}]
-        }
+        },
+        {
+            inherit: 'basicPage',
+            questions: [{inherit: 'num'}]
+        },
     ]);
 
     return API.script;
