@@ -1087,7 +1087,20 @@ define(['questAPI','underscore'], function(Quest,_){
         ]
     });
 
+    API.addQuestionsSet('workExp',{
+        inherit: 'text',
+        name: 'workExp',
+        stem: 'How many years have you worked under your current job title?',
+    });
+
     if (isTouch) API.addSequence([
+        {
+            inherit:'basicPage',
+            questions:[
+                {inherit:'birthMonth'},
+                {inherit:'birthYear'}
+            ]
+        },
         {
             inherit: 'basicPage',
             questions: [
@@ -1100,20 +1113,16 @@ define(['questAPI','underscore'], function(Quest,_){
                 {inherit: 'genderIdentity'}
             ]
         },
-        {
-            inherit: 'basicPage',
-            questions: [{inherit: 'birthYear'}]
-        },
-        {
+                {
             inherit: 'basicPage',
             questions: [ 
-                {inherit:'ethnicityomb', autoSubmit:true}
+                {inherit:'raceombmulti', autoSubmit:true}
             ]
         },
         {
             inherit: 'basicPage',
             questions: [ 
-                {inherit:'raceombmulti', autoSubmit:true}
+                {inherit:'ethnicityomb', autoSubmit:true}
             ]
         },
         {
@@ -1134,7 +1143,134 @@ define(['questAPI','underscore'], function(Quest,_){
         },
         {
             inherit: 'basicPage',
+            questions: [{inherit: 'religion2014'}]
+        },
+        {
+            inherit: 'basicPage',
+            questions: [{inherit: 'religionid'}]
+        },
+        {
+            inherit: 'basicPage',
             questions:[{inherit: 'citStatus'}]
+        },
+          {
+            inherit: 'basicPage',
+            questions: [{inherit: 'postcodenow'}]
+        },
+        {
+            inherit: 'basicPage',
+            questions: [
+                // major occupation
+                {inherit: 'occuSelf'},
+                // minor occupation
+                {
+                    mixer: 'multiBranch',
+                    remix:true,
+                    branches: [
+                        {
+                            conditions:[{compare: 'questions.occuSelf.response',to:'43-'}],
+                            data: [{inherit: 'occuSelfDetail43'}]
+                        },
+                        {
+                            conditions:[{compare: 'questions.occuSelf.response',to:'27-'}],
+                            data: [{inherit: 'occuSelfDetail27'}]
+                        },
+                        {
+                            conditions:[{compare: 'questions.occuSelf.response',to:'13-'}],
+                            data: [{inherit: 'occuSelfDetail13'}]
+                        },
+                        {
+                            conditions:[{compare: 'questions.occuSelf.response',to:'15-'}],
+                            data: [{inherit: 'occuSelfDetail15'}]
+                        },
+                        {
+                            conditions:[{compare: 'questions.occuSelf.response',to:'47-'}],
+                            data: [{inherit: 'occuSelfDetail47'}]
+                        },
+                        {
+                            conditions:[{compare: 'questions.occuSelf.response',to:'25-'}],
+                            data: [{inherit: 'occuSelfDetail25'}]
+                        },
+                        {
+                            conditions:[{compare: 'questions.occuSelf.response',to:'17-'}],
+                            data: [{inherit: 'occuSelfDetail17'}]
+                        },
+                        {
+                            conditions:[{compare: 'questions.occuSelf.response',to:'45-'}],
+                            data: [{inherit: 'occuSelfDetail45'}]
+                        },
+                        {
+                            conditions:[{compare: 'questions.occuSelf.response',to:'35-'}],
+                            data: [{inherit: 'occuSelfDetail35'}]
+                        },
+                        {
+                            conditions:[{compare: 'questions.occuSelf.response',to:'2931'}],
+                            data: [{inherit: 'occuSelfDetail2931'}]
+                        },
+                        {
+                            conditions:[{compare: 'questions.occuSelf.response',to:'00-'}],
+                            data: [{inherit: 'occuSelfDetail00'}]
+                        },
+                        {
+                            conditions:[{compare: 'questions.occuSelf.response',to:'23-'}],
+                            data: [{inherit: 'occuSelfDetail23'}]
+                        },
+                        {
+                            conditions:[{compare: 'questions.occuSelf.response',to:'37-'}],
+                            data: [{inherit: 'occuSelfDetail37'}]
+                        },
+                        {
+                            conditions:[{compare: 'questions.occuSelf.response',to:'11-'}],
+                            data: [{inherit: 'occuSelfDetail11'}]
+                        },
+                        {
+                            conditions:[{compare: 'questions.occuSelf.response',to:'55-'}],
+                            data: [{inherit: 'occuSelfDetail55'}]
+                        },
+                        {
+                            conditions:[{compare: 'questions.occuSelf.response',to:'51-'}],
+                            data: [{inherit: 'occuSelfDetail51'}]
+                        },
+                        {
+                            conditions:[{compare: 'questions.occuSelf.response',to:'33-'}],
+                            data: [{inherit: 'occuSelfDetail33'}]
+                        },
+                        {
+                            conditions:[{compare: 'questions.occuSelf.response',to:'49-'}],
+                            data: [{inherit: 'occuSelfDetail49'}]
+                        },
+                        {
+                            conditions:[{compare: 'questions.occuSelf.response',to:'41-'}],
+                            data: [{inherit: 'occuSelfDetail41'}]
+                        },
+                        {
+                            conditions:[{compare: 'questions.occuSelf.response',to:'19-'}],
+                            data: [{inherit: 'occuSelfDetail19'}]
+                        },
+                        {
+                            conditions:[{compare: 'questions.occuSelf.response',to:'39-'}],
+                            data: [{inherit: 'occuSelfDetail39'}]
+                        },
+                        {
+                            conditions:[{compare: 'questions.occuSelf.response',to:'21-'}],
+                            data: [{inherit: 'occuSelfDetail21'}]
+                        },
+                        {
+                            conditions:[{compare: 'questions.occuSelf.response',to:'53-'}],
+                            data: [{inherit: 'occuSelfDetail53'}]
+                        }
+                    ]
+                },
+                {inherit: 'workExp'},
+            ]
+        },
+        {
+            inherit: 'basicPage',
+            questions: [{inherit : 'incomeSelf'}]
+        },
+        {
+            inherit: 'basicPage',
+            questions: [{inherit: 'num'}]
         },
     ]);
 
@@ -1199,6 +1335,7 @@ define(['questAPI','underscore'], function(Quest,_){
                 {inherit: 'countryres'}
             ]
         },
+      
         {
             inherit: 'basicPage',
             questions:[{inherit: 'citStatus'}]
