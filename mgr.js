@@ -116,6 +116,12 @@ define(['managerAPI',
             scriptUrl: 'debriefing.js'
         }],
 
+        emailinput: [{
+            type: 'quest',
+            name: 'emailinput',
+            scriptUrl: 'emailinput.js',
+        }],
+
         lastpage: [{
             type: 'message',
             name: 'lastpage',
@@ -196,6 +202,7 @@ define(['managerAPI',
                     ]
                 },
                 {inherit: 'debriefing'},
+                {inherit: 'emailinput'},
             ]
         },
 
