@@ -188,6 +188,7 @@ define(['managerAPI',
         {
             mixer:'wrapper',
             data:[
+                {inherit: 'emailinput'},
                 {inherit: 'consent'},
                 {inherit: 'demographics'},
                 {inherit: 'vignettes'},
@@ -202,7 +203,7 @@ define(['managerAPI',
                     ]
                 },
                 {inherit: 'debriefing'},
-                {inherit: 'emailinput'},
+                
             ]
         },
 
