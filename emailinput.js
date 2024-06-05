@@ -1,6 +1,6 @@
 define(['questAPI'], function(Quest){
-    let API = new Quest();
-    let isTouch = API.getGlobal().$isTouch;
+    var API = new Quest();
+    var isTouch = API.getGlobal().$isTouch;
 	
     /**
 	* Page prototype
@@ -37,10 +37,11 @@ define(['questAPI'], function(Quest){
     });
 
     API.addQuestionsSet('text',{
-        inherit :'basicQ',
+        inherit: 'basicQ',
         type: 'text',
-        noSubmit: false
+        noSubmit:false
     });
+
 	
     /**
 	*Specific questions
