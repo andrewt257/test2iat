@@ -1,12 +1,7 @@
-define(['questAPI','underscore'], function(Quest,_){
+define(['questAPI'], function(Quest){
 
-    var API = new Quest();
-    var isTouch = API.getGlobal().isTouch;
-
-    /**
-	* Settings
-	*/
-    API.addSettings('logger',{pulse: 3});
+    let API = new Quest();
+    let isTouch = API.getGlobal().isTouch;
 
     /**
 	* Page prototype
@@ -16,10 +11,10 @@ define(['questAPI','underscore'], function(Quest,_){
         decline: true,
         declineText: isTouch ? 'Decline' : 'Decline to Answer', 
         autoFocus:true, 
-        header: 'Demographics',
-        numbered: false,
+        header: 'EmailInput',
         progressBar: isTouch ? 'Page <%= pagesMeta.number %> out of 6' : 'Page <%= pagesMeta.number %> out of 21'
     });
+
     API.addQuestionsSet('basicQ',{
         decline: true,
         required : true,
@@ -38,31 +33,20 @@ define(['questAPI','underscore'], function(Quest,_){
         noSubmit:false
     });
 
-    addQuestionsSet('email',
-    {
+    API.addQuestionsSet({
         inherit: 'text',
         name: 'email',
         stem: 'Please provide your email address',
-    })
-    addEventListener
+    });
 
-    if (isTouch) API.addSequence ([
+
+API.addSequence([
         {
             inherit: 'basicPage',
             questions:[
                 {inherit:'email'},
             ]
         }
-    ])
-
-    if (!isTOuch) API.addSequence([
-        {
-            inherit: 'basicPage',
-            questions: [
-                {inherit: 'email'}
-            ]
-        }
-
     ])
 
     return API.script;
