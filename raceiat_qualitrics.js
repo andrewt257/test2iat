@@ -34,7 +34,10 @@ define(['pipAPI', 'https://cdn.jsdelivr.net/gh/baranan/minno-tasks@0.*/IAT/qualt
                 {image: 'wf1_nc.jpg'},
                 {image: 'wf2_nc.jpg'},
                 {image: 'wf3_nc.jpg'}
-            ]},
+            ],
+            //Stimulus css
+            stimulusCss : {color:'#0000FF','font-size':'2.3em'}
+        },
 
 		base_url : {//Where are your images at?
 			image : 'https://andrewt257.github.io/test2iat/images/'
