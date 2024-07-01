@@ -512,7 +512,7 @@ define(['questAPI','underscore'], function(Quest,_){
             inherit:'basicPage',
             questions:[
                 {inherit:'birthMonth'},
-                {inherit:'birthYear'}
+                {inherit:'age'}
             ]
         },
         {
@@ -602,7 +602,7 @@ define(['questAPI','underscore'], function(Quest,_){
             inherit: 'basicPage',
             questions: [
                 {inherit: 'birthMonth'},
-                {inherit: 'birthYear'}
+                {inherit: 'age'}
             ]
         },
         {
