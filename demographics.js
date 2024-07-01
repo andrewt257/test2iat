@@ -73,18 +73,6 @@ define(['questAPI','underscore'], function(Quest,_){
     /**
 	* Actual questions
 	*/
-    API.addQuestionsSet('genderIdentity',{
-        inherit: 'multiChoice',
-        name: 'genderIdentity',
-        stem: 'What is your current gender identity? (check all that apply)',
-        answers: [
-            {text:'Male',value:1},
-            {text:'Female',value:2}, 
-            {text:'Non-binary/genderfluid/genderqueer',value:3}, 
-            {text:'Other',value:4}, 
-        ]
-    });
-
     API.addQuestionsSet('birthMonth',{
         inherit: 'singleChoice',
         style:'multiButtons',
@@ -105,15 +93,41 @@ define(['questAPI','underscore'], function(Quest,_){
             {text:'December',value:12}
         ]
     });
+    /*API.addQuestionsSet('birthYear',{
+            inherit: 'singleChoicedrop',
+            name: 'birthyear',
+            stem: 'What is your birth year?',
+            answers: _.range((new Date()).getFullYear()-5, 1910, -1) // use underscore to create an array of years from ten years ago back to 1910
+        });
+        */
 
-    API.addQuestionsSet('birthYear',{
-        inherit: 'singleChoicedrop',
-        name: 'birthyear',
-        stem: 'What is your birth year?',
-        answers: _.range((new Date()).getFullYear()-5, 1910, -1) // use underscore to create an array of years from ten years ago back to 1910
+    API.addQuestionsSet('age',{
+        inherit:'singleChoice',
+        name:'age',
+        stem:'How old are you?',
+        answers: [
+            {text:'Younger than 16', value:0},
+            {text:'16-17', value:1},
+            {text:'18-24', value:2},
+            {text:'25-30', value:3},
+            {text:'31-40', value:4},
+            {text:'41+', value:5}
+        ]
     });
 
-    API.addQuestionsSet('raceomb',{
+    API.addQuestionsSet('genderIdentity',{
+        inherit: 'multiChoice',
+        name: 'genderIdentity',
+        stem: 'What gender do you identify as',
+        answers: [
+            {text:'Male',value:1},
+            {text:'Female',value:2}, 
+            {text:'Non-binary/genderfluid/genderqueer',value:3}, 
+            {text:'Other',value:4}, 
+        ]
+    });
+
+    API.addQuestionsSet('race',{
         inherit: 'singleChoicedrop',
         name: 'raceomb002',
         stem: 'How would you best describe your race?',
@@ -145,11 +159,11 @@ define(['questAPI','underscore'], function(Quest,_){
         ]
     });*/
 
-    API.addQuestionsSet('ethnicityomb',{
+    API.addQuestionsSet('ethnicity',{
         inherit: isTouch ? 'singleChoice' : 'singleChoicedrop',
         name: 'ethnicityomb',
         autoSubmit: false,
-        stem: 'Are you of Hispanic/Latino origin?',
+        stem: 'Do you identify as Latino or Hispanic?',
         answers: [
             {text:'Yes',value:1},
             {text:'No',value:2},
@@ -158,20 +172,20 @@ define(['questAPI','underscore'], function(Quest,_){
     });
 
     API.addQuestionsSet('maritalStatus',{
-    inherit: 'singleChoice',
-    name: 'maritalStatus',
-    stem: 'What is your marital status?',
-    answers: [
-        {text:'Never married', value:0},
-        {text:'Married', value:1},
-        {text:'Domestic partnership/civil union', value:2},
-        {text:'Separated', value:3},
-        {text:'Divorced', value:4},
-        {text:'Widowed(not remarried)', value:5},
-    ]
+        inherit: 'singleChoice',
+        name: 'maritalStatus',
+        stem: 'What is your marital status?',
+        answers: [
+            {text:'Never married', value:0},
+            {text:'Married', value:1},
+            {text:'Domestic partnership/civil union', value:2},
+            {text:'Separated', value:3},
+            {text:'Divorced', value:4},
+            {text:'Widowed(not remarried)', value:5},
+        ]
     });
 
-    /*API.addQuestionsSet('numChildren',{
+    API.addQuestionsSet('numChildren',{
         inherit: 'singleChoice',
         name: 'numChildren',
         stem: 'How many children do you have?',
@@ -183,7 +197,7 @@ define(['questAPI','underscore'], function(Quest,_){
             {text:'4', value:4},
             {text:'5 or more', value:5}
         ]
-    })*/
+    })
 
     API.addQuestionsSet('politicalid',{
         inherit: 'singleChoice',
@@ -213,9 +227,9 @@ define(['questAPI','underscore'], function(Quest,_){
             {text:'Not registered to vote', value:6},
         ]
     });
-    API.addQuestionsSet('num',{
+    API.addQuestionsSet('numIAT',{
         inherit: 'singleChoice',
-        name: 'num002',
+        name: 'numIAT',
         style:'multiButtons',
         stem: 'How many Implicit Association Tests (IATs) have you previously performed?',
         answers: [
@@ -227,10 +241,10 @@ define(['questAPI','underscore'], function(Quest,_){
         ]
     });
 
-    API.addQuestionsSet('religionid',{
+    API.addQuestionsSet('religionStrength',{
         inherit: 'singleChoice',
         name: 'religionid',
-        stem: 'How religious do you consider yourself to be?',
+        stem: 'How religious or spiritual do you consider yourself to be?',
         answers: [
             {text:'Strongly religious', value:4},
             {text:'Moderately religious', value:3},
@@ -239,7 +253,7 @@ define(['questAPI','underscore'], function(Quest,_){
         ]
     });
 
-    API.addQuestionsSet('religion2014',{
+    API.addQuestionsSet('religionID',{
         inherit: 'singleChoice',
         name: 'religion2014',
         stem: 'What is your religious affiliation?',
@@ -298,7 +312,26 @@ define(['questAPI','underscore'], function(Quest,_){
         ]
     });
 
-    API.addQuestionsSet('employment',{
+    API.addQuestionsSet('hlthFuture', {
+        inherit: 'singleChoice',
+        name:'hlthFuture',
+        stem:'What area of healthcare are you looking to go into?',
+        answers: [
+            {text:'Administration', value:0},
+            {text:'Nursing', value:1},
+            {text:'Occupational Therapy', value:2},
+            {text:'Physical Therapy', value:3},
+            {text:'Physician', value:4},
+            {text:'Psychology', value:5},
+            {text:'Public Health', value:6},
+            {text:'Radiology', value:7},
+            {text:'Researcher', value:8},
+            {text:'Radiology technologist', value:9},
+            {text:'Other', value:10}
+        ]
+    });
+
+    API.addQuestionsSet('employmentStatus',{
         inherit: 'singleChoice',
         name: 'employment',
         stem: 'Please indicate your current employment status.',
@@ -327,7 +360,7 @@ define(['questAPI','underscore'], function(Quest,_){
     API.addQuestionsSet('occuSelf',{
         inherit: 'multiChoice',
         name: 'occuSelf',
-        stem: 'Have you ever worked in any of these roles?.',
+        stem: 'Have you ever worked in any of these roles? (check all that apply).',
         numericValues:false,
         answers: [
             {text:'Certified Nursing Assitant', value:1},
@@ -419,10 +452,10 @@ define(['questAPI','underscore'], function(Quest,_){
         ]
     });
 
-    API.addQuestionsSet('mcPrescribe',{
+    API.addQuestionsSet('mcSupport',{
         inherit:'singleChoice',
         name: 'mcPrescribe',
-        stem:'How supportive would you be of your patients use of medical cannabis?',
+        stem:'How supportive would you be of your patients use of medical marijuana?',
         answers:[
             {text:'Very', value:4},
             {text:'Moderately', value:3},
@@ -431,8 +464,6 @@ define(['questAPI','underscore'], function(Quest,_){
             {text:'Not at all', value:0}
         ]
     });
-
-   
 
     API.addQuestionsSet('cannPersonalnow',{
         inherit:'singleChoice',
@@ -449,7 +480,7 @@ define(['questAPI','underscore'], function(Quest,_){
     API.addQuestionsSet('cannPersonalever',{
         inherit:'singleChoice',
         name: 'cannPersonalever',
-        stem:'Have you ever- even once- used marijuana?',
+        stem:'Have you ever -even once- used marijuana?',
         answers:[
             {text:'Yes, for recreational use only', value:2},
             {text:'Yes, for medical use only', value:1},
@@ -487,62 +518,50 @@ define(['questAPI','underscore'], function(Quest,_){
         {
             inherit: 'basicPage',
             questions: [
-                {inherit:'birthSex'}
-            ]
-        },
-        {
-            inherit: 'basicPage',
-            questions: [
                 {inherit: 'genderIdentity'}
             ]
         },
                 {
             inherit: 'basicPage',
             questions: [ 
-                {inherit:'raceombmulti', autoSubmit:true}
-            ]
-        },
-        {
-            inherit: 'basicPage',
-            questions: [ 
-                {inherit:'ethnicityomb', autoSubmit:true}
+                {inherit:'race', autoSubmit:true},
+                {inherit:'ethnicity', autoSubmit:true}
             ]
         },
         {
             inherit:'basicPage',
-            questions: [{inherit:'maritalStatus'}]
+            questions: [
+                {inherit:'maritalStatus'},
+                {inherit:'numChildren'}
+            ]
+        },
+        {
+            inherit: 'basicPage',
+            questions: [
+                {inherit: 'politicalID'},
+                {inherit: 'politicalParty'}
+            ]
+        },
+        {
+            inherit: 'basicPage',
+            questions: [
+                {inherit: 'religionStrength'},
+                {inherit: 'religionID'}
+            ]
+        },
+        {
+            inherit: 'basicPage',
+            questions:[
+                {inherit: 'major'},
+                {inherit: 'hlthFuture'}
+            ]
         },
         {
             inherit:'basicPage',
-            questions:[{inherit:'numChildren'}]
-        },
-        {
-            inherit: 'basicPage',
-            questions: [{inherit: 'politicalid'}]
-        },
-        {
-            inherit: 'basicPage',
-            questions: [{inherit: 'politicalParty'}]
-        },
-        {
-            inherit: 'basicPage',
-            questions: [{inherit: 'religion2014'}]
-        },
-        {
-            inherit: 'basicPage',
-            questions: [{inherit: 'religionid'}]
-        },
-        {
-            inherit: 'basicPage',
-            questions:[{inherit: 'citStatus'}]
-        },
-        {
-            inherit: 'basicPage',
-            questions: [{inherit: 'postcodenow'}]
-        },
-        {
-            inherit:'basicPage',
-            questions:[{inherit:'workStatus'}]
+            questions:[
+                {inherit:'employmentStatus'},
+                {inherit:'hlthWork'}
+            ]
         },
         {
             inherit: 'basicPage',
@@ -555,19 +574,14 @@ define(['questAPI','underscore'], function(Quest,_){
         },
         {
             inherit: 'basicPage',
-            questions: [{inherit:'incomeSelf'}]
-        },
-        {
-            inherit:'basicPage',
-            questions:[{inherit:'militService'}]
-        },
-        {
-            inherit:'basicPage',
-            questions: [{inherit:'mcPrescribe'}]
-        },
-        {
-            inherit:'basicPage',
             questions: [{inherit:'mcKnowledge'}]
+        },
+        {
+            inherit:'basicPage',
+            questions:[
+                {inherit:'mcRecommend'},
+                {inherit:'mcSupport'}
+            ]
         },
         {
             inherit:'basicPage',
@@ -579,7 +593,7 @@ define(['questAPI','underscore'], function(Quest,_){
         },
         {
             inherit: 'basicPage',
-            questions: [{inherit:'num'}]
+            questions: [{inherit:'rsnsNoMC'}]
         },
     ]);
 
@@ -593,75 +607,52 @@ define(['questAPI','underscore'], function(Quest,_){
         },
         {
             inherit: 'basicPage',
-            questions: [
-                {inherit: 'birthSex', helpText: '', autoSubmit:false}, 
+            questions: [ 
                 {inherit: 'genderIdentity', autoSubmit:false}
             ]
         },
         {
             inherit: 'basicPage',
             questions: [ //If required would be set to true, then participants cannot select one and leave the other empty.
-                {inherit:'raceomb', required:false},
-                {
-                    mixer:'branch',
-                    remix:true,
-                    conditions:[{compare: 'questions.raceomb002.response',to:8}],
-                    data: [
-                        {inherit:'raceombmulti'}
-                    ]
-                },
-                {inherit:'ethnicityomb', required:false}
+                {inherit:'race', required:false},
+                {inherit:'ethnicity', required:false}
             ]
         },
         {
             inherit:'basicPage',
-            questions: [{inherit:'maritalStatus'}]
-        },
-        {
-            inherit:'basicPage',
-            questions: [{inherit:'numChildren'}]
-        },
-        {
-            inherit: 'basicPage',
-            questions: [{inherit: 'politicalid'}]
-        },
-        {
-            inherit: 'basicPage',
-            questions: [{inherit: 'politicalParty'}]
-        },
-        {
-            inherit: 'basicPage',
-            questions: [{inherit: 'religion2014'}]
-        },
-        {
-            inherit: 'basicPage',
-            questions: [{inherit: 'religionid'}]
+            questions: [
+                {inherit:'maritalStatus'},
+                {inherit:'numChildren'}
+            ]
         },
         {
             inherit: 'basicPage',
             questions: [
-                {inherit: 'countrycit'},
-                {inherit: 'countryres'}
+                {inherit: 'politicalID'},
+                {inherit: 'politicalParty'}
             ]
         },
-      
         {
             inherit: 'basicPage',
-            questions:[{inherit: 'citStatus'}]
+            questions: [
+                {inherit: 'religionStrength'},
+                {inherit: 'religionID'}
+            ]
+        },
+        {
+            inherit: 'basicPage',
+            questions:[
+                {inherit: 'classStanding'},
+                {inherit: 'major'},
+                {inherit: 'hlthFuture'}
+            ]
         },
         {
             inherit: 'basicPage',
             questions: [//If required would be set to true, then participants cannot select one and leave the other empty.
-                {inherit: 'postcodenow', required:false},
-                {inherit: 'postcodelong', required:false}]
+                {inherit: 'employmentStatus'},
+                {inherit: 'hlthWork'}]
         },
-        {
-            inherit:'basicPage',
-            questions:[{inherit:'workStatus'}]
-        },
-        /**
-         * Select occupation
-         */
         {
             inherit: 'basicPage',
             questions: [
@@ -673,19 +664,14 @@ define(['questAPI','underscore'], function(Quest,_){
         },
         {
             inherit: 'basicPage',
-            questions: [{inherit:'incomeSelf'}]
+            questions: [{inherit:'mcKnowledge'}]
         },
         {
             inherit:'basicPage',
-            questions:[{inherit: 'militService'}]
-        },
-        {
-            inherit:'basicPage',
-            questions:[{inherit: 'mcPrescribe'}]
-        },
-        {
-            inherit:'basicPage',
-            questions:[{inherit: 'mcKnowledge'}]
+            questions:[
+                {inherit: 'mcRecommend'},
+                {inherit: 'mcSupport'}
+            ]
         },
         {
             inherit:'basicPage',
@@ -697,7 +683,7 @@ define(['questAPI','underscore'], function(Quest,_){
         },
         {
             inherit: 'basicPage',
-            questions: [{inherit: 'num'}]
+            questions: [{inherit: 'rsnsNoMC'}]
         },
     ]);
 
