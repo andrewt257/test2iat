@@ -190,20 +190,22 @@ define(['managerAPI',
             data:[
                 {inherit: 'consent'},
                 {inherit: 'demographics'},
-                {inherit: 'vignettes'},
                 
-                
+                {mixer:'random',
+                    data:[
+                        {inherit: 'vignettes'},
                 // force the instructions to preceed the iat
-                {
-                    mixer: 'wrapper',
-                    data: [
-                        {inherit: 'raceiat_instructions'},
-                        {inherit: 'raceiat'}
-                    ]
-                },
+                        {
+                            mixer: 'wrapper',
+                                data: [
+                                    {inherit: 'raceiat_instructions'},
+                                    {inherit: 'raceiat'}
+                                ]
+                        },
+                     ]},
                 //{inherit: 'debriefing'},
                 {inherit: 'emailinput'},
-            ]
+            ],
         },
 
 		{inherit: 'uploading'},
