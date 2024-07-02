@@ -201,7 +201,7 @@ define(['managerAPI',
                         {inherit: 'raceiat'}
                     ]
                 },
-                {inherit: 'debriefing'},
+                //{inherit: 'debriefing'},
                 {inherit: 'emailinput'},
             ]
         },
