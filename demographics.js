@@ -171,7 +171,7 @@ define(['questAPI','underscore'], function(Quest,_){
         ]
     });
 
-    API.addQuestionsSet('maritalStatus',{
+   /* API.addQuestionsSet('maritalStatus',{
         inherit: 'singleChoice',
         name: 'maritalStatus',
         stem: 'What is your marital status?',
@@ -227,6 +227,7 @@ define(['questAPI','underscore'], function(Quest,_){
             {text:'Not registered to vote', value:6},
         ]
     });
+    
     API.addQuestionsSet('numIAT',{
         inherit: 'singleChoice',
         name: 'numIAT',
@@ -284,7 +285,7 @@ define(['questAPI','underscore'], function(Quest,_){
             {text:'Senior', value:4},
             {text:'Nontraditional Student', value:5},
         ]
-    });
+    }); 
 
     /*API.addQuestionsSet('studentOrNot',{
         inherit: 'boolean',
