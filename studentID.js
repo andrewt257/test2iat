@@ -12,7 +12,7 @@ define(['questAPI'], function(Quest){
 
     API.addPagesSet('basicPage',{
         noSubmit:false, //Change to true if you don't want to show the submit button.
-        header: 'Email Address',
+        header: 'StudentID',
         decline: true,
         declineText: isTouch ? 'Decline' : 'Decline to Answer', 
         autoFocus:true, 
@@ -55,7 +55,7 @@ define(['questAPI'], function(Quest){
             mixer : 'wrapper', 
             data : [
                         {
-                        inherit:'basicPage'            , 
+                        inherit:'basicPage', 
                         questions : {inherit:'studentID'}           
                         } 
                     ]
