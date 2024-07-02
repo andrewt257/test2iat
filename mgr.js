@@ -203,8 +203,6 @@ define(['managerAPI',
                                 ]
                         },
                      ]},
-                //{inherit: 'debriefing'},
-                
             ],
         },
         {inherit: 'studentID'},
