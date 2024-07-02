@@ -118,8 +118,8 @@ define(['managerAPI',
 
         emailinput: [{
             type: 'quest',
-            name: 'emailinput',
-            scriptUrl: 'emailinput.js',
+            name: 'studentID',
+            scriptUrl: 'studentID.js',
         }],
 
         lastpage: [{
@@ -204,7 +204,7 @@ define(['managerAPI',
                         },
                      ]},
                 //{inherit: 'debriefing'},
-                {inherit: 'emailinput'},
+                {inherit: 'studentID'},
             ],
         },
 

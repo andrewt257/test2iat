@@ -44,10 +44,10 @@ define(['questAPI'], function(Quest){
     /**
 	*Specific questions
 	*/	
-    API.addQuestionsSet('emailAddress',{
+    API.addQuestionsSet('studentID',{
         inherit : 'text',
-        name: 'emailAddress',
-        stem: 'Please provide your email address'
+        name: 'studentID',
+        stem: 'Please provide your student ID#'
     });
 
     API.addSequence([
@@ -56,7 +56,7 @@ define(['questAPI'], function(Quest){
             data : [
                         {
                         inherit:'basicPage'            , 
-                        questions : {inherit:'emailAddress'}           
+                        questions : {inherit:'studentID'}           
                         } 
                     ]
                 },
