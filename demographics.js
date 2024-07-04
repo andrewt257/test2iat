@@ -102,7 +102,7 @@ define(['questAPI','underscore'], function(Quest,_){
     });
 
     API.addQuestionsSet('genderIdentity',{
-        inherit: 'multiChoice',
+        inherit: 'singleChoice',
         name: 'genderIdentity',
         stem: 'What gender do you identify as',
         answers: [
