@@ -69,7 +69,6 @@ define(['questAPI','underscore'], function(Quest,_){
             {text:'No', value:0}
         ]
     });
-
     /**
 	* Actual questions
 	*/
@@ -93,26 +92,12 @@ define(['questAPI','underscore'], function(Quest,_){
             {text:'December',value:12}
         ]
     });
-    /*API.addQuestionsSet('birthYear',{
-            inherit: 'singleChoicedrop',
-            name: 'birthyear',
-            stem: 'What is your birth year?',
-            answers: _.range((new Date()).getFullYear()-5, 1910, -1) // use underscore to create an array of years from ten years ago back to 1910
-        });
-        */
 
     API.addQuestionsSet('age',{
-        inherit:'singleChoice',
+        inherit:'singleChoicedrop',
         name:'age',
         stem:'How old are you?',
-        answers: [
-            {text:'Younger than 16', value:0},
-            {text:'16-17', value:1},
-            {text:'18-24', value:2},
-            {text:'25-30', value:3},
-            {text:'31-40', value:4},
-            {text:'41+', value:5}
-        ]
+        answers: Range(1,100)
     });
 
     API.addQuestionsSet('genderIdentity',{
@@ -123,175 +108,38 @@ define(['questAPI','underscore'], function(Quest,_){
             {text:'Male',value:1},
             {text:'Female',value:2}, 
             {text:'Non-binary/genderfluid/genderqueer',value:3}, 
-            {text:'Other',value:4}, 
+            {text:'Other/Don\'t know',value:0}, 
         ]
     });
 
+    API.addQuestionsSet('genderOther',{
+        inherit:'text',
+        name:'genderOther',
+        stem:'Other'
+    });
+
     API.addQuestionsSet('race',{
-        inherit: 'singleChoicedrop',
+        inherit: 'multiChoice',
         name: 'raceomb002',
-        stem: 'How would you best describe your race?',
+        stem: 'Please select all of the following which describe your race/ethinicity.',
         autoSubmit: false,
         answers: [
             {text:'American Indian/Native American/Alaska Native',value:1},
             {text:'Asian',value:2},
             {text:'Black/African American',value:3},
-            {text:'Middle Eastern/North Africa',value:4},
-            {text:'Native Hawaiian or other Pacific Islander',value:5},
-            {text:'White/European American',value:6},
-            {text:'Mixed/Multiple',value:7},
-            {text:'Other/Unknown',value:8}
+            {text:'Latino or Hispanic',value:4},
+            {text:'Middle Eastern/North Africa',value:5},
+            {text:'Native Hawaiian/Other Pacific Islander',value:6},
+            {text:'White/European American',value:7},
+            {text:'Other/Unknown',value:0}
         ]
     });
 
-    /*API.addQuestionsSet('raceombmulti',{
-        inherit: 'multiChoice',
-        name: 'raceombmulti',
-        stem: 'Please select the categories that comprise your race. (Click a category once to select it. Click it again to deselect. You may select as many categories as you wish. When you are finished, click Submit.)',
-        answers: [
-            {text:'American Indian/Alaska Native',value:1},
-            {text:'East Asian',value:2},
-            {text:'South Asian',value:3},
-            {text:'Native Hawaiian or other Pacific Islander',value:4},
-            {text:'Black or African American',value:5},
-            {text:'White or European American',value:6},
-            {text:'Other or Unknown',value:7}
-        ]
-    });*/
-
-    API.addQuestionsSet('ethnicity',{
-        inherit: isTouch ? 'singleChoice' : 'singleChoicedrop',
-        name: 'ethnicityomb',
-        autoSubmit: false,
-        stem: 'Do you identify as Latino or Hispanic?',
-        answers: [
-            {text:'Yes',value:1},
-            {text:'No',value:2},
-            //{text:'Unknown',value:3}
-        ]
+    API.addQuestionsSet('raceOther',{
+        inherit:'text',
+        name:'raceOther',
+        stem:'Other'
     });
-
-   /* API.addQuestionsSet('maritalStatus',{
-        inherit: 'singleChoice',
-        name: 'maritalStatus',
-        stem: 'What is your marital status?',
-        answers: [
-            {text:'Never married', value:0},
-            {text:'Married', value:1},
-            {text:'Domestic partnership/civil union', value:2},
-            {text:'Separated', value:3},
-            {text:'Divorced', value:4},
-            {text:'Widowed(not remarried)', value:5},
-        ]
-    });
-
-    API.addQuestionsSet('numChildren',{
-        inherit: 'singleChoice',
-        name: 'numChildren',
-        stem: 'How many children do you have?',
-        answers: [
-            {text:'0', value:0},
-            {text:'1', value:1},
-            {text:'2', value:2},
-            {text:'3', value:3},
-            {text:'4', value:4},
-            {text:'5 or more', value:5}
-        ]
-    })
-
-    API.addQuestionsSet('politicalid',{
-        inherit: 'singleChoice',
-        name: 'politicalid7',
-        stem: 'How would you describe your political views?',
-        answers: [
-            {text:'Strongly Liberal',value:1},
-            {text:'Moderately Liberal',value:2},
-            {text:'Slightly Liberal',value:3},
-            {text:'Moderate/Neither',value:4},
-            {text:'Slightly Conservative',value:5},
-            {text:'Moderately Conservative',value:6},
-            {text:'Strongly Conservative',value:7}
-        ]
-    });
-
-    API.addQuestionsSet('politicalParty',{
-        inherit:'singleChoice',
-        name: 'politicalParty',
-        stem: 'What is your political party affiliation?',
-        answers: [
-            {text:'Democratic Party', value:1},
-            {text:'Republican Party', value:2},
-            {text:'Libertarian Party', value:3},
-            {text:'Political Party Not listed', value:4},
-            {text:'Independent/no party affiliation', value:5},
-            {text:'Not registered to vote', value:6},
-        ]
-    });
-    
-    API.addQuestionsSet('numIAT',{
-        inherit: 'singleChoice',
-        name: 'numIAT',
-        style:'multiButtons',
-        stem: 'How many Implicit Association Tests (IATs) have you previously performed?',
-        answers: [
-            '0',
-            '1',
-            '2',
-            '3-5',
-            '6+'
-        ]
-    });
-
-    API.addQuestionsSet('religionStrength',{
-        inherit: 'singleChoice',
-        name: 'religionid',
-        stem: 'How religious or spiritual do you consider yourself to be?',
-        answers: [
-            {text:'Strongly religious', value:4},
-            {text:'Moderately religious', value:3},
-            {text:'Slightly religious', value:2},
-            {text:'Not at all religious', value:1}
-        ]
-    });
-
-    API.addQuestionsSet('religionID',{
-        inherit: 'singleChoice',
-        name: 'religion2014',
-        stem: 'What is your religious affiliation?',
-        answers: [
-            {text:'Buddhist/Confucian/Shinto', value:1},
-            {text:'Christian: Catholic or Orthodox', value:2},
-            {text:'Christian: Protestant or Other', value:3},
-            {text:'Folk & Traditional Religions', value:4},
-            {text:'Hindu', value:5},
-            {text:'Jewish', value:6},
-            {text:'Mormon/LDS', value:7},
-            {text:'Muslim/Islamic', value:8},
-            {text:'Shinto/Sikh/Taoism/Confucianism/Jainism', value:9},
-            {text:'Other Religion', value:10},
-            {text:'Unaffiliated but Religious/Spiritual', value:11},
-            {text:'Not religious', value:12}
-        ]
-    });
-
-    API.addQuestionsSet('classStanding',{
-        inherit: 'singleChoice',
-        name: 'classStanding',
-        stem: 'What is your class standing?',
-        answers: [
-            {text:'Freshman', value:1},
-            {text:'Sophmore', value:2},
-            {text:'Junior', value:3},
-            {text:'Senior', value:4},
-            {text:'Nontraditional Student', value:5},
-        ]
-    }); 
-
-    /*API.addQuestionsSet('studentOrNot',{
-        inherit: 'boolean',
-        name: 'studentOrNot',
-        stem: 'Are you presently a student in a primary school, secondary school, college, or graduate degree program?',
-    });*/
 
     API.addQuestionsSet('major',{
         inherit: 'singleChoicedrop',
@@ -304,47 +152,45 @@ define(['questAPI','underscore'], function(Quest,_){
             {text:'Health Science',value:4},
             {text:'Kinesiology',value:5},
             {text:'Nursing',value:6},
-            {text:'Pre-Medicine',value:7},
-            {text:'Pre-Nursing',value:8},
-            {text:'Psychology',value:9},
-            {text:'Radiologic Technology',value:10},
-            {text:'Sports Medicine',value:11},
-            {text:'Other', value:12}
+            {text:'Pre-Nursing',value:7},
+            {text:'Psychology',value:8},
+            {text:'Radiologic Technology',value:9},
+            {text:'Sports Medicine',value:10},
+            {text:'Undeclared',value:11},
+            {text:'Other', value:0}
         ]
+    });
+
+    API.addQuestionsSet('majorOther',{
+        inherit:'text',
+        name:'majorOther',
+        stem:'Other'
     });
 
     API.addQuestionsSet('hlthFuture', {
-        inherit: 'singleChoice',
+        inherit: 'singleChoicedrop',
         name:'hlthFuture',
         stem:'What area of healthcare are you looking to go into?',
         answers: [
-            {text:'Administration', value:0},
-            {text:'Nursing', value:1},
-            {text:'Occupational Therapy', value:2},
-            {text:'Physical Therapy', value:3},
-            {text:'Physician', value:4},
-            {text:'Psychology', value:5},
-            {text:'Public Health', value:6},
-            {text:'Radiology', value:7},
-            {text:'Researcher', value:8},
-            {text:'Radiology technologist', value:9},
-            {text:'Other', value:10}
+            {text:'Administration', value:1},
+            {text:'Nursing', value:2},
+            {text:'Occupational Therapy', value:3},
+            {text:'Physical Therapy', value:4},
+            {text:'Physician', value:5},
+            {text:'Physician Assistant/Associate', value:6},
+            {text:'Psychology', value:7},
+            {text:'Public Health', value:8},
+            {text:'Radiology', value:9},
+            {text:'Researcher', value:10},
+            {text:'Radiology technologist', value:11},
+            {text:'Other', value:0}
         ]
     });
 
-    API.addQuestionsSet('employmentStatus',{
-        inherit: 'singleChoice',
-        name: 'employment',
-        stem: 'Please indicate your current employment status.',
-        answers: [
-            {text:'Never employed', value:1},
-            {text:'Previously employed; now retired', value:2},
-            {text:'Presently unemployed but previously part-time employed', value:3},
-            {text:'Presently unemployed but previously full-time employed', value:4},
-            {text:'Presently part-time employed', value:5},
-            {text:'Presently full-time employed', value:6},
-            {text:'Non-standard employment (e.g. self-employed, multiple job holder)', value:7}
-        ]
+    API.addQuestionsSet('careerOther',{
+        inherit:'text',
+        name:'careerOther',
+        stem:'Other'
     });
 
     API.addQuestionsSet('hlthWork', {
@@ -353,7 +199,7 @@ define(['questAPI','underscore'], function(Quest,_){
         stem:'Do you currently or have you ever worked in healthcare?',
         answers:[
             {text:'Yes', value:1},
-            {text:'No', value:2}
+            {text:'No', value:0}
         ]
 
     });
@@ -373,103 +219,83 @@ define(['questAPI','underscore'], function(Quest,_){
             {text:'Physical Therapy Assistant', value:7},
             {text:'Surgical Technician', value:8},
             {text:'Nonclinical', value:9},
+            {text:'Other', value:0}
         ]
+    });
+
+    API.addQuestionsSet('workOther',{
+        inherit:'text',
+        name:'workOther',
+        stem:'Other'
     });
 
     API.addQuestionsSet('workExp',{
         inherit: 'singleChoicedrop',
         required:false,
         name: 'workExp',
-        stem: 'How many years have you worked under your current job title?',
+        stem: 'How long have you worked in healthcare?',
         answers:[
             {text:'0', value:0},
-            {text:'1', value:1},
-            {text:'2', value:2},
-            {text:'3', value:3},
-            {text:'4', value:4},
-            {text:'5', value:5},
-            {text:'6', value:6},
-            {text:'7', value:7},
-            {text:'8', value:8},
-            {text:'9', value:9},
-            {text:'10', value:10},
-            {text:'11', value:11},
-            {text:'12', value:12},
-            {text:'13', value:13},
-            {text:'14', value:14},
-            {text:'15', value:15},
-            {text:'16', value:16},
-            {text:'17', value:17},
-            {text:'18', value:18},
-            {text:'19', value:19},
-            {text:'20', value:20},
-            {text:'21', value:21},
-            {text:'22', value:22},
-            {text:'23', value:23},
-            {text:'24', value:24},
-            {text:'25', value:25},
-            {text:'26', value:26},
-            {text:'27', value:27},
-            {text:'28', value:28},
-            {text:'29', value:29},
-            {text:'30', value:30},
-            {text:'31', value:31},
-            {text:'32', value:32},
-            {text:'33', value:33},
-            {text:'34', value:34},
-            {text:'35', value:35},
-            {text:'36', value:36},
-            {text:'37', value:37},
-            {text:'38', value:38},
-            {text:'39', value:39},
-            {text:'40', value:40},
-            {text:'41+', value:41},
+            {text:'1 month', value:101},
+            {text:'2 months', value:102},
+            {text:'3 months', value:103},
+            {text:'4 months', value:104},
+            {text:'5 months', value:105},
+            {text:'6 months', value:106},
+            {text:'7 months', value:107},
+            {text:'8 months', value:108},
+            {text:'9 months', value:109},
+            {text:'10 months', value:110},
+            {text:'11 months', value:111},
+            {text:'12 months', value:112},
+            {text:'1 year', value:1},
+            {text:'2 years', value:2},
+            {text:'3 years', value:3},
+            {text:'4 years', value:4},
+            {text:'5 years', value:5},
+            {text:'6 years', value:6},
+            {text:'7 years', value:7},
+            {text:'8 years', value:8},
+            {text:'9 years', value:9},
+            {text:'10 years', value:10},
+            {text:'11 years', value:11},
+            {text:'12 years', value:12},
+            {text:'13 years', value:13},
+            {text:'14 years', value:14},
+            {text:'15 years', value:15},
+            {text:'16 years', value:16},
+            {text:'17 years', value:17},
+            {text:'18 years', value:18},
+            {text:'19 years', value:19},
+            {text:'20 years', value:20},
+            {text:'21 years', value:21},
+            {text:'22 years', value:22},
+            {text:'23 years', value:23},
+            {text:'24 years', value:24},
+            {text:'25 years', value:25},
+            {text:'26 years', value:26},
+            {text:'27 years', value:27},
+            {text:'28 years', value:28},
+            {text:'29 years', value:29},
+            {text:'30 years', value:30},
+            {text:'31 years', value:31},
+            {text:'32 years', value:32},
+            {text:'33 years', value:33},
+            {text:'34 years', value:34},
+            {text:'35 years', value:35},
+            {text:'36 years', value:36},
+            {text:'37 years', value:37},
+            {text:'38 years', value:38},
+            {text:'39 years', value:39},
+            {text:'40 years', value:40},
+            {text:'41+ years', value:41},
         ]
     });
 
-    API.addQuestionsSet('mcKnowledge',{
-        inherit: 'singleChoice',
-        name : 'mcKnowledge',
-        stem: 'How knowledgeable do you consider yourself to be on medical marijuana. ',
-        answers: [
-            {text:'Very knowledgeable', value:4},
-            {text:'Moderately knowledgeable', value:3},
-            {text:'Somewhat knowledgeable', value:2},
-            {text:'Slightly knowledgeable', value:1},
-            {text:'Not at all knowledgeable', value:0},
-        ]
-    });
-
-    API.addQuestionsSet('mcRecommend', {
-        inherit:'singleChoice',
-        name: 'mcRecommend',
-        stem: 'How open would you be to recommending medical marijuana as a future clinician?',
-        answers:[
-            {text:'Very', value:4},
-            {text:'Moderately', value:3},
-            {text:'Somewhat', value:2},
-            {text:'Slightly', value:1},
-            {text:'Not at all', value:0}
-        ]
-    });
-
-    API.addQuestionsSet('mcSupport',{
-        inherit:'singleChoice',
-        name: 'mcPrescribe',
-        stem:'How supportive would you be of your patients use of medical marijuana?',
-        answers:[
-            {text:'Very', value:4},
-            {text:'Moderately', value:3},
-            {text:'Somewhat', value:2},
-            {text:'Slightly', value:1},
-            {text:'Not at all', value:0}
-        ]
-    });
-
-    API.addQuestionsSet('cannPersonalnow',{
+    API.addQuestionsSet('cannPersonal',{
         inherit:'singleChoice',
         name: 'cannPersonalnow',
-        stem:'Do you currently use marijuana personally?',
+        stem:'Do you currently/have you ever used marijuana (even once)?',
         answers:[
             {text:'Yes, for recreational use only', value:2},
             {text:'Yes, for medical use only', value:1},
@@ -478,36 +304,6 @@ define(['questAPI','underscore'], function(Quest,_){
         ]
     });
 
-    API.addQuestionsSet('cannPersonalever',{
-        inherit:'singleChoice',
-        name: 'cannPersonalever',
-        stem:'Have you ever -even once- used marijuana?',
-        answers:[
-            {text:'Yes, for recreational use only', value:2},
-            {text:'Yes, for medical use only', value:1},
-            {text:'Yes, for both recreational and medical use', value:3},
-            {text:'No', value:0}
-        ]
-    });
-
-    API.addQuestionsSet('rsnsNoMC',{
-            inherit:'singleChoice',
-            name: 'rsnsNoMC',
-            stem:'If not, for what reasons have you refrained from using marijuana?',
-            answers:[
-                {text:'No interst', value:1},
-                {text:'Fear of legal consequences', value:2},
-                {text:'Concern over reactions from friends and family', value:3},
-                {text:'Limted access to cannabis', value:4},
-                {text:'Use would put employment at risk', value:5},
-                {text:'Concerns regarding interactions with medications', value:6},
-                {text:'Concerns about side effects', value:7},
-                {text:'Financial limitations/cost', value:8},
-                {text:'Religious reasons', value:9},
-                {text:'Lack of knowledge', value:10},
-                {text:'Other', value:11},
-            ]
-        });
     if (isTouch) API.addSequence([
         {
             inherit:'basicPage',
@@ -519,35 +315,29 @@ define(['questAPI','underscore'], function(Quest,_){
         {
             inherit: 'basicPage',
             questions: [
-                {inherit: 'genderIdentity'}
+                {inherit: 'genderIdentity'},
+                {
+                    mixer:'branch',
+                    remix:true,
+                    conditions:[{compare: 'questions.genderIdentity.response',to:0}],
+                    data: [
+                        {inherit:'genderOther'}
+                    ]
+                },
             ]
         },
                 {
             inherit: 'basicPage',
             questions: [ 
                 {inherit:'race', autoSubmit:true},
-                {inherit:'ethnicity', autoSubmit:true}
-            ]
-        },
-        {
-            inherit:'basicPage',
-            questions: [
-                {inherit:'maritalStatus'},
-                {inherit:'numChildren'}
-            ]
-        },
-        {
-            inherit: 'basicPage',
-            questions: [
-                {inherit: 'politicalID'},
-                {inherit: 'politicalParty'}
-            ]
-        },
-        {
-            inherit: 'basicPage',
-            questions: [
-                {inherit: 'religionStrength'},
-                {inherit: 'religionID'}
+                {
+                    mixer:'branch',
+                    remix:true,
+                    conditions:[{compare: 'questions.race.response',to:0}],
+                    data: [
+                        {inherit:'raceOther'}
+                    ]
+                },
             ]
         },
         {
@@ -560,131 +350,127 @@ define(['questAPI','underscore'], function(Quest,_){
         {
             inherit:'basicPage',
             questions:[
-                {inherit:'employmentStatus'},
-                {inherit:'hlthWork'}
+                {inherit:'hlthWork'},
+                {
+                    mixer:'branch',
+                    remix:true,
+                    conditions:[{compare: 'questions.hlthWork.response',to:1}],
+                    data: [
+                        {inherit:'occuSelf'}
+                    ]
+                },
+                {
+                    mixer:'branch',
+                    remix:true,
+                    conditions:[{compare: 'questions.occuSelf.response',to:0}],
+                    data: [
+                        {inherit:'workOther'}
+                    ]
+                },
             ]
         },
         {
             inherit: 'basicPage',
             questions: [
-                // major occupation
-                {inherit: 'occuSelf'},
                 // minor occupation
-                {inherit: 'workExp'},
-            ]
-        },
-        {
-            inherit: 'basicPage',
-            questions: [{inherit:'mcKnowledge'}]
-        },
-        {
-            inherit:'basicPage',
-            questions:[
-                {inherit:'mcRecommend'},
-                {inherit:'mcSupport'}
+                {
+                    mixer:'branch',
+                    remix:true,
+                    conditions:[{compare: 'questions.hlthWork.response',to:1}],
+                    data: [
+                        {inherit:'workExp'}
+                    ]
+                },
             ]
         },
         {
             inherit:'basicPage',
-            questions: [{inherit:'cannPersonalnow'}]
-        },
-        {
-            inherit:'basicPage',
-            questions: [{inherit:'cannPersonalever'}]
-        },
-        {
-            inherit: 'basicPage',
-            questions: [{inherit:'rsnsNoMC'}]
+            questions: [{inherit:'cannPersonal'}]
         },
     ]);
 
     if (!isTouch) API.addSequence([
         {
-            inherit: 'basicPage',
-            questions: [
-                {inherit: 'birthMonth'},
-                {inherit: 'age'}
+            inherit:'basicPage',
+            questions:[
+                {inherit:'birthMonth'},
+                {inherit:'age'}
             ]
         },
         {
+            inherit: 'basicPage',
+            questions: [
+                {inherit: 'genderIdentity'},
+                {
+                    mixer:'branch',
+                    remix:true,
+                    conditions:[{compare: 'questions.genderIdentity.response',to:0}],
+                    data: [
+                        {inherit:'genderOther'}
+                    ]
+                },
+            ]
+        },
+                {
             inherit: 'basicPage',
             questions: [ 
-                {inherit: 'genderIdentity', autoSubmit:false}
-            ]
-        },
-        {
-            inherit: 'basicPage',
-            questions: [ //If required would be set to true, then participants cannot select one and leave the other empty.
-                {inherit:'race', required:false},
-                {inherit:'ethnicity', required:false}
-            ]
-        },
-        {
-            inherit:'basicPage',
-            questions: [
-                {inherit:'maritalStatus'},
-                {inherit:'numChildren'}
-            ]
-        },
-        {
-            inherit: 'basicPage',
-            questions: [
-                {inherit: 'politicalID'},
-                {inherit: 'politicalParty'}
-            ]
-        },
-        {
-            inherit: 'basicPage',
-            questions: [
-                {inherit: 'religionStrength'},
-                {inherit: 'religionID'}
+                {inherit:'race', autoSubmit:true},
+                {
+                    mixer:'branch',
+                    remix:true,
+                    conditions:[{compare: 'questions.race.response',to:0}],
+                    data: [
+                        {inherit:'raceOther'}
+                    ]
+                },
             ]
         },
         {
             inherit: 'basicPage',
             questions:[
-                {inherit: 'classStanding'},
                 {inherit: 'major'},
                 {inherit: 'hlthFuture'}
             ]
         },
         {
-            inherit: 'basicPage',
-            questions: [//If required would be set to true, then participants cannot select one and leave the other empty.
-                {inherit: 'employmentStatus'},
-                {inherit: 'hlthWork'}]
+            inherit:'basicPage',
+            questions:[
+                {inherit:'hlthWork'},
+                {
+                    mixer:'branch',
+                    remix:true,
+                    conditions:[{compare: 'questions.hlthWork.response',to:1}],
+                    data: [
+                        {inherit:'occuSelf'}
+                    ]
+                },
+                {
+                    mixer:'branch',
+                    remix:true,
+                    conditions:[{compare: 'questions.occuSelf.response',to:0}],
+                    data: [
+                        {inherit:'workOther'}
+                    ]
+                },
+            ]
         },
         {
             inherit: 'basicPage',
             questions: [
-                // major occupation
-                {inherit: 'occuSelf'},
                 // minor occupation
-                {inherit: 'workExp'},
-            ]
-        },
-        {
-            inherit: 'basicPage',
-            questions: [{inherit:'mcKnowledge'}]
-        },
-        {
-            inherit:'basicPage',
-            questions:[
-                {inherit: 'mcRecommend'},
-                {inherit: 'mcSupport'}
+                {
+                    mixer:'branch',
+                    remix:true,
+                    conditions:[{compare: 'questions.hlthWork.response',to:1}],
+                    data: [
+                        {inherit:'workExp'}
+                    ]
+                },
             ]
         },
         {
             inherit:'basicPage',
-            questions:[{inherit: 'cannPersonalnow'}]
-        },
-        {
-            inherit:'basicPage',
-            questions:[{inherit: 'cannPersonalever'}]
-        },
-        {
-            inherit: 'basicPage',
-            questions: [{inherit: 'rsnsNoMC'}]
+            questions: [{inherit:'cannPersonal'}]
         },
     ]);
 
