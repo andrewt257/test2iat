@@ -189,8 +189,8 @@ define(['managerAPI',
             mixer:'wrapper',
             data:[
                 {inherit: 'consent'},
+                {inherit: 'studentID'},
                 {inherit: 'demographics'},
-                
                 {mixer:'random',
                     data:[
                         {inherit: 'vignettes'},
@@ -205,7 +205,7 @@ define(['managerAPI',
                      ]},
             ],
         },
-        {inherit: 'studentID'},
+        
 		{inherit: 'uploading'},
         {inherit: 'lastpage'},
         {inherit: 'redirect'}
