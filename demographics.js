@@ -206,7 +206,7 @@ define(['questAPI','underscore'], function(Quest,_){
     });
 
     API.addQuestionsSet('occuSelf',{
-        inherit: 'multiChoice',
+        inherit: 'singleChoice',
         name: 'occuSelf',
         stem: 'Have you ever worked in any of these roles? (check all that apply).',
         numericValues:false,
@@ -422,14 +422,7 @@ define(['questAPI','underscore'], function(Quest,_){
             inherit: 'basicPage',
             questions: [ 
                 {inherit:'race', autoSubmit:true},
-                {
-                    mixer:'branch',
-                    remix:true,
-                    conditions:[{compare: 'questions.race.response',to:0}],
-                    data: [
-                        {inherit:'raceOther'}
-                    ]
-                },
+                {inherit:'raceOther'}
             ]
         },
         {
