@@ -116,7 +116,7 @@ define(['managerAPI',
             scriptUrl: 'debriefing.js'
         }],
 
-        emailinput: [{
+        studentID: [{
             type: 'quest',
             name: 'studentID',
             scriptUrl: 'studentID.js',
