@@ -206,9 +206,9 @@ define(['questAPI','underscore'], function(Quest,_){
     });
 
     API.addQuestionsSet('occuSelf',{
-        inherit: 'singleChoice',
+        inherit: 'multiChoice',
         name: 'occuSelf',
-        stem: 'Have you ever worked in any of these roles? (check all that apply).',
+        stem: 'If yes, have you ever worked in any of these roles? (check all that apply).',
         numericValues:false,
         answers: [
             {text:'Certified Nursing Assitant', value:1},
@@ -365,15 +365,16 @@ define(['questAPI','underscore'], function(Quest,_){
             inherit:'basicPage',
             questions:[
                 {inherit:'hlthWork'},
+                {inherit:'occuSelf'},
                 {
                     mixer:'branch',
                     remix:true,
-                    conditions:[{compare: 'questions.hlthWork.response',to:1}],
+                    conditions:[{compare: 'questions.occuSelf.response',to:0}],
                     data: [
-                        {inherit:'occuSelf'}
+                        {inherit:'occuOther'}
                     ]
                 },
-                {inherit:'occuOther'}
+                
             ]
         },
         {
@@ -456,22 +457,16 @@ define(['questAPI','underscore'], function(Quest,_){
             inherit:'basicPage',
             questions:[
                 {inherit:'hlthWork'},
-                {
-                    mixer:'branch',
-                    remix:true,
-                    conditions:[{compare: 'questions.hlthWork.response',to:1}],
-                    data: [
-                        {inherit:'occuSelf'}
-                    ]
-                },
+                {inherit:'occuSelf'},
                 {
                     mixer:'branch',
                     remix:true,
                     conditions:[{compare: 'questions.occuSelf.response',to:0}],
                     data: [
-                        {inherit:'workOther'}
+                        {inherit:'occuOther'}
                     ]
                 },
+                
             ]
         },
         {
