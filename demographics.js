@@ -139,7 +139,7 @@ define(['questAPI','underscore'], function(Quest,_){
     API.addQuestionsSet('raceOther',{
         inherit:'text',
         name:'raceOther',
-        stem:'Other'
+        stem:'If \'Other\', please indicate what'
     });
 
     API.addQuestionsSet('major',{
@@ -331,14 +331,7 @@ define(['questAPI','underscore'], function(Quest,_){
             inherit: 'basicPage',
             questions: [ 
                 {inherit:'race', autoSubmit:true},
-                {
-                    mixer:'branch',
-                    remix:true,
-                    conditions:[{compare: 'questions.race.response',to:0}],
-                    data: [
-                        {inherit:'raceOther'}
-                    ]
-                },
+                {inherit:'raceOther'}
             ]
         },
         {
