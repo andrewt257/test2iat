@@ -97,7 +97,7 @@ define(['questAPI','underscore'], function(Quest,_){
         inherit:'singleChoicedrop',
         name:'age',
         stem:'How old are you?',
-        answers: Range(1,100)
+        answers: _.range(1,100)
     });
 
     API.addQuestionsSet('genderIdentity',{
