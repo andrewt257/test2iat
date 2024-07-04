@@ -345,7 +345,23 @@ define(['questAPI','underscore'], function(Quest,_){
             inherit: 'basicPage',
             questions:[
                 {inherit: 'major'},
-                {inherit: 'hlthFuture'}
+                {
+                    mixer:'branch',
+                    remix:true,
+                    conditions:[{compare: 'questions.major.response',to:0}],
+                    data: [
+                        {inherit:'majorOther'}
+                    ]
+                },
+                {inherit: 'hlthFuture'},
+                {
+                    mixer:'branch',
+                    remix:true,
+                    conditions:[{compare: 'questions.hlthFuture.response',to:0}],
+                    data: [
+                        {inherit:'careerOther'}
+                    ]
+                },
             ]
         },
         {
