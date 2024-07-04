@@ -143,7 +143,7 @@ define(['questAPI','underscore'], function(Quest,_){
     });
 
     API.addQuestionsSet('major',{
-        inherit: 'singleChoicedrop',
+        inherit: 'singleChoice',
         name: 'major',
         stem: 'What is your major?',
         answers: [
@@ -169,7 +169,7 @@ define(['questAPI','underscore'], function(Quest,_){
     });
 
     API.addQuestionsSet('hlthFuture', {
-        inherit: 'singleChoicedrop',
+        inherit: 'singleChoice',
         name:'hlthFuture',
         stem:'What area of healthcare are you looking to go into?',
         answers: [
@@ -353,6 +353,10 @@ define(['questAPI','underscore'], function(Quest,_){
                         {inherit:'majorOther'}
                     ]
                 },
+            ]
+        },
+        {inherit: 'basicPage',
+            questions:[
                 {inherit: 'hlthFuture'},
                 {
                     mixer:'branch',
