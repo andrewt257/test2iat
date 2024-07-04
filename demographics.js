@@ -98,6 +98,7 @@ define(['questAPI','underscore'], function(Quest,_){
         name:'age',
         stem:'How old are you?',
         numericValues:true,
+        answers: [1,100]
     });
 
     API.addQuestionsSet('genderIdentity',{
