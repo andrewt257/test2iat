@@ -227,7 +227,7 @@ define(['questAPI','underscore'], function(Quest,_){
     API.addQuestionsSet('occuOther',{
         inherit:'text',
         name:'occuOther',
-        stem:'Other'
+        stem:'If \'Other\', please indicate what'
     });
 
     API.addQuestionsSet('workExp',{
@@ -373,14 +373,7 @@ define(['questAPI','underscore'], function(Quest,_){
                         {inherit:'occuSelf'}
                     ]
                 },
-                {
-                    mixer:'branch',
-                    remix:true,
-                    conditions:[{compare: 'questions.occuSelf.response',to:0}],
-                    data: [
-                        {inherit:'occuOther'}
-                    ]
-                },
+                {inherit:'occuOther'}
             ]
         },
         {
