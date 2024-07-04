@@ -18,7 +18,7 @@ define(['questAPI','underscore'], function(Quest,_){
         autoFocus:true, 
         header: 'Demographics',
         numbered: false,
-        progressBar: isTouch ? 'Page <%= pagesMeta.number %> out of 6' : 'Page <%= pagesMeta.number %> out of 14'
+        progressBar: isTouch ? 'Page <%= pagesMeta.number %> out of 8' : 'Page <%= pagesMeta.number %> out of 8'
     });
 
     /**
@@ -224,9 +224,9 @@ define(['questAPI','underscore'], function(Quest,_){
         ]
     });
 
-    API.addQuestionsSet('workOther',{
+    API.addQuestionsSet('occuOther',{
         inherit:'text',
-        name:'workOther',
+        name:'occuOther',
         stem:'Other'
     });
 
@@ -385,7 +385,7 @@ define(['questAPI','underscore'], function(Quest,_){
                     remix:true,
                     conditions:[{compare: 'questions.occuSelf.response',to:0}],
                     data: [
-                        {inherit:'workOther'}
+                        {inherit:'occuOther'}
                     ]
                 },
             ]
