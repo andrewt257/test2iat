@@ -46,7 +46,7 @@ define(['questAPI','underscore'], function(Quest,_){
     API.addQuestionsSet('text',{
         inherit: 'basicQ',
         type: 'text',
-        noSubmit:false
+        noSubmit:true
     });
 
     API.addQuestionsSet('singleChoicedrop',{
