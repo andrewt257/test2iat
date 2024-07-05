@@ -26,7 +26,7 @@ define(['questAPI','underscore'], function(Quest,_){
 	*/
     API.addQuestionsSet('basicQ',{
         decline: true,
-        required : true,
+        required : false,
         errorMsg: {
             required: isTouch 
                 ? 'Please select an answer, or click \'Decline\'' 
