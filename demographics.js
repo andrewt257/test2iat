@@ -188,9 +188,9 @@ define(['questAPI','underscore'], function(Quest,_){
         ]
     });
 
-    API.addQuestionsSet('careerOther',{
+    API.addQuestionsSet('hlthFutureOther',{
         inherit:'text',
-        name:'careerOther',
+        name:'hlthFutureOther',
         stem:'Other'
     });
 
@@ -224,9 +224,9 @@ define(['questAPI','underscore'], function(Quest,_){
         ]
     });
 
-    API.addQuestionsSet('occuOther',{
+    API.addQuestionsSet('occuSelfOther',{
         inherit:'text',
-        name:'occuOther',
+        name:'occuSelfOther',
         stem:'If \'Other\', please indicate what'
     });
 
@@ -356,7 +356,7 @@ define(['questAPI','underscore'], function(Quest,_){
                     remix:true,
                     conditions:[{compare: 'questions.hlthFuture.response',to:0}],
                     data: [
-                        {inherit:'careerOther'}
+                        {inherit:'hlthFutureOther'}
                     ]
                 },
             ]
@@ -366,15 +366,7 @@ define(['questAPI','underscore'], function(Quest,_){
             questions:[
                 {inherit:'hlthWork'},
                 {inherit:'occuSelf'},
-                {
-                    mixer:'branch',
-                    remix:true,
-                    conditions:[{compare: 'questions.occuSelf.response',to:0}],
-                    data: [
-                        {inherit:'occuOther'}
-                    ]
-                },
-                
+                {inherit:'occuSelfOther'}                
             ]
         },
         {
@@ -448,7 +440,7 @@ define(['questAPI','underscore'], function(Quest,_){
                     remix:true,
                     conditions:[{compare: 'questions.hlthFuture.response',to:0}],
                     data: [
-                        {inherit:'careerOther'}
+                        {inherit:'hlthFutureOther'}
                     ]
                 },
             ]
@@ -458,14 +450,7 @@ define(['questAPI','underscore'], function(Quest,_){
             questions:[
                 {inherit:'hlthWork'},
                 {inherit:'occuSelf'},
-                {
-                    mixer:'branch',
-                    remix:true,
-                    conditions:[{compare: 'questions.occuSelf.response',to:0}],
-                    data: [
-                        {inherit:'occuOther'}
-                    ]
-                },
+                {inherit:'occuSelfOther'},
                 
             ]
         },
