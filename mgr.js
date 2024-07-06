@@ -93,7 +93,7 @@ define(['managerAPI',
         }],
 
         vignettes_instructions: [{
-            type:'instructions',
+            inherit:'instructions',
             name: 'vignettes_instructions',
             templateUrl: 'vignettes_instructions.jst',
             title: 'Vignettes Instructions',
