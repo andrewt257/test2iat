@@ -92,6 +92,14 @@ define(['managerAPI',
             header: 'Implicit Association Test'
         }],
 
+        vignettes_instructions: [{
+            type:'instructions',
+            name: 'vignettes_instructions',
+            templateUrl: 'vignettes_instructions.jst',
+            title: 'Vignettes Instructions',
+            header: 'Vignettes Instructions'
+        }],
+
         vignettes: [{
             type: 'quest',
             name: 'vignettes',
@@ -193,7 +201,12 @@ define(['managerAPI',
                 {inherit: 'demographics'},
                 {mixer:'random',
                     data:[
-                        {inherit: 'vignettes'},
+                        {mixer: 'wrapper',
+                            data: [
+                                {inherit: 'vignettes_instructions'},
+                                {inherit: 'vignettes'},
+                            ]
+                        },
                 // force the instructions to preceed the iat
                         {
                             mixer: 'wrapper',
