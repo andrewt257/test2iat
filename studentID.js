@@ -12,9 +12,7 @@ define(['questAPI'], function(Quest){
 
     API.addPagesSet('basicPage',{
         noSubmit:false, //Change to true if you don't want to show the submit button.
-        header: 'StudentID',
-        decline: false,
-        declineText: isTouch ? 'Decline' : 'Decline to Answer', 
+        header: 'StudentID', 
         autoFocus:true, 
         progressBar:  'Page <%= pagesMeta.number %> out of 1'
     });
@@ -27,8 +25,8 @@ define(['questAPI'], function(Quest){
         required : true, 		
         errorMsg: {
             required: isTouch 
-                ? 'Please select an answer, or click \'Decline\'' 
-                : 'Please select an answer, or click \'Decline to Answer\''
+                ? 'Please select an answer'
+                : 'Please select an answer'
         },
         autoSubmit:'true',
         numericValues:'true',
