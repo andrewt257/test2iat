@@ -367,13 +367,7 @@ define(['questAPI','underscore'], function(Quest,_){
                         {inherit:'occuSelf'},
                         {inherit:'occuSelfOther'}
                     ],
-                },             
-            ],
-        },
-        {
-            inherit: 'basicPage',
-            questions: [
-                // minor occupation
+                }, 
                 {
                     mixer:'branch',
                     remix:true,
@@ -381,9 +375,16 @@ define(['questAPI','underscore'], function(Quest,_){
                     data: [
                         {inherit:'workExp'}
                     ]
-                },
-            ]
+                },            
+            ],
         },
+       /* {
+            inherit: 'basicPage',
+            questions: [
+                // minor occupation
+                
+            ]
+        },*/
         {
             inherit:'basicPage',
             questions: [{inherit:'cannPersonal'}]
@@ -451,13 +452,7 @@ define(['questAPI','underscore'], function(Quest,_){
                         {inherit:'occuSelf'},
                         {inherit:'occuSelfOther'}
                     ],
-                },            
-            ],
-        },
-        {
-            inherit: 'basicPage',
-            questions: [
-                // minor occupation
+                }, 
                 {
                     mixer:'branch',
                     remix:true,
@@ -465,9 +460,16 @@ define(['questAPI','underscore'], function(Quest,_){
                     data: [
                         {inherit:'workExp'}
                     ]
-                },
-            ]
+                },            
+            ],
         },
+       /* {
+            inherit: 'basicPage',
+            questions: [
+                // minor occupation
+                
+            ]
+        },*/
         {
             inherit:'basicPage',
             questions: [{inherit:'cannPersonal'}]
