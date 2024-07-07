@@ -122,7 +122,7 @@ define(['questAPI','underscore'], function(Quest,_){
 
     API.addQuestionsSet('race',{
         inherit: 'multiChoice',
-        name: 'raceomb002',
+        name: 'race',
         stem: 'Please select all of the following which describe your race/ethinicity.',
         autoSubmit: false,
         answers: [
