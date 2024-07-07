@@ -13,7 +13,7 @@ define(['questAPI'], function(Quest){
     API.addPagesSet('basicPage',{
         noSubmit:false, //Change to true if you don't want to show the submit button.
         header: 'Vignettes',
-        decline: true,
+        decline: false,
         declineText: isTouch ? 'Decline' : 'Decline to Answer', 
         autoFocus:true, 
         progressBar:  'Page <%= pagesMeta.number %> out of 5'
@@ -41,11 +41,11 @@ define(['questAPI'], function(Quest){
         type: 'selectOne'
     });
 	
-    API.addQuestionsSet('basicDropdown',{
+    /*API.addQuestionsSet('basicDropdown',{
         inherit :'basicQ',
         type : 'dropdown',
         autoSubmit:false
-    });
+    });*/
 	
     API.addQuestionsSet('therm',{
         inherit: 'basicSelect',
