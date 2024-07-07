@@ -339,14 +339,7 @@ define(['questAPI','underscore'], function(Quest,_){
             inherit: 'basicPage',
             questions:[
                 {inherit: 'major'},
-                {
-                    mixer:'branch',
-                    remix:true,
-                    conditions:[{compare: 'questions.major.response',to:0}],
-                    data: [
-                        {inherit:'majorOther'}
-                    ]
-                },
+                {inherit:'majorOther'}
             ]
         },
         {inherit: 'basicPage',
@@ -430,14 +423,7 @@ define(['questAPI','underscore'], function(Quest,_){
             inherit: 'basicPage',
             questions:[
                 {inherit: 'major'},
-                {
-                    mixer:'branch',
-                    remix:true,
-                    conditions:[{compare: 'questions.major.response',to:0}],
-                    data: [
-                        {inherit:'majorOther'}
-                    ]
-                },
+                {inherit:'majorOther'}
             ]
         },
         {inherit: 'basicPage',
