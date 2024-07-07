@@ -372,16 +372,16 @@ define(['questAPI','underscore'], function(Quest,_){
                     conditions:[{compare: 'questions.hlthWork.response',to:1}],
                     data: [
                         {inherit:'occuSelf'},
-                        {
+                    ],
+                },  
+                {
                             mixer:'branch',
                             remix:true,
                             conditions:[{compare: 'questions.occuSelf.response',to:0}],
                             data: [
                                 {inherit:'occuSelfOther'}
                             ]
-                        },
-                    ],
-                },              
+                        },            
             ],
         },
         {
@@ -470,16 +470,16 @@ define(['questAPI','underscore'], function(Quest,_){
                     conditions:[{compare: 'questions.hlthWork.response',to:1}],
                     data: [
                         {inherit:'occuSelf'},
-                        {
+                    ],
+                },  
+                {
                             mixer:'branch',
                             remix:true,
                             conditions:[{compare: 'questions.occuSelf.response',to:0}],
                             data: [
                                 {inherit:'occuSelfOther'}
                             ]
-                        },
-                    ],
-                },              
+                        },            
             ],
         },
         {
