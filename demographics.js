@@ -166,7 +166,7 @@ define(['questAPI','underscore'], function(Quest,_){
     API.addQuestionsSet('majorOther',{
         inherit:'text',
         name:'majorOther',
-        stem:'If \'Other\' please specify'
+        stem:'If \'Other/Multiple\' please specify'
     });
 
     API.addQuestionsSet('hlthFuture', {
