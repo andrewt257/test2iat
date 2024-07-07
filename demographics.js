@@ -26,7 +26,7 @@ define(['questAPI','underscore'], function(Quest,_){
 	*/
     API.addQuestionsSet('basicQ',{
         decline: true,
-        required : false,
+        required : true,
         errorMsg: {
             required: isTouch 
                 ? 'Please select an answer, or click \'Decline\'' 
@@ -46,7 +46,8 @@ define(['questAPI','underscore'], function(Quest,_){
     API.addQuestionsSet('text',{
         inherit: 'basicQ',
         type: 'text',
-        noSubmit:false
+        noSubmit:false,
+        required: false
     });
 
     API.addQuestionsSet('singleChoicedrop',{
