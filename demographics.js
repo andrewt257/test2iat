@@ -159,7 +159,7 @@ define(['questAPI','underscore'], function(Quest,_){
             {text:'Radiologic Technology',value:9},
             {text:'Sports Medicine',value:10},
             {text:'Undeclared',value:11},
-            {text:'Other', value:0}
+            {text:'Other/Multiple', value:0}
         ]
     });
 
