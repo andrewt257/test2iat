@@ -46,7 +46,7 @@ define(['questAPI'], function(Quest){
         },
         autoSubmit:'false',
         numericValues:'true',
-        help: '<%= pagesMeta.number < 5 %>',
+        help: '<%= pagesMeta.number < 3 %>',
     });
 
     API.addQuestionsSet('basicSelect',{
