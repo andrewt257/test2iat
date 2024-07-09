@@ -12,7 +12,7 @@ define(['questAPI'], function(Quest){
 
     API.addPagesSet('basicPage',{
         noSubmit:false, //Change to true if you don't want to show the submit button.
-        header: 'StudentID', 
+        header: 'Student ID', 
         autoFocus:true, 
         progressBar:  'Page <%= pagesMeta.number %> out of 1'
     });
@@ -45,7 +45,7 @@ define(['questAPI'], function(Quest){
     API.addQuestionsSet('studentID',{
         inherit : 'text',
         name: 'studentID',
-        stem: 'Please provide your student ID#'
+        stem: 'Please provide your student ID number'
     });
 
     API.addSequence([
