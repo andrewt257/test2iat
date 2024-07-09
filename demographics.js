@@ -18,7 +18,7 @@ define(['questAPI','underscore'], function(Quest,_){
         autoFocus:true, 
         header: 'Demographics',
         numbered: false,
-        progressBar: isTouch ? 'Page <%= pagesMeta.number %> out of 8' : 'Page <%= pagesMeta.number %> out of 8'
+        progressBar: isTouch ? 'Page <%= pagesMeta.number %> out of 7' : 'Page <%= pagesMeta.number %> out of 7'
     });
 
     /**
@@ -105,7 +105,7 @@ define(['questAPI','underscore'], function(Quest,_){
     API.addQuestionsSet('genderIdentity',{
         inherit: 'singleChoice',
         name: 'genderIdentity',
-        stem: 'What gender do you identify as',
+        stem: 'What gender do you identify as?',
         answers: [
             {text:'Male',value:1},
             {text:'Female',value:2}, 
@@ -117,7 +117,7 @@ define(['questAPI','underscore'], function(Quest,_){
     API.addQuestionsSet('genderOther',{
         inherit:'text',
         name:'genderOther',
-        stem:'If \'Other\' please specify'
+        stem:'If \'Other\' please specify.'
     });
 
     API.addQuestionsSet('race',{
@@ -140,11 +140,11 @@ define(['questAPI','underscore'], function(Quest,_){
     API.addQuestionsSet('raceOther',{
         inherit:'text',
         name:'raceOther',
-        stem:'If \'Other\' please specify'
+        stem:'If \'Other\' please specify.'
     });
 
     API.addQuestionsSet('major',{
-        inherit: 'singleChoice',
+        inherit: 'multiChoice',
         name: 'major',
         stem: 'What is your major?',
         answers: [
@@ -166,7 +166,7 @@ define(['questAPI','underscore'], function(Quest,_){
     API.addQuestionsSet('majorOther',{
         inherit:'text',
         name:'majorOther',
-        stem:'If \'Other/Multiple\' please specify'
+        stem:'If \'Other/Multiple\' please specify.'
     });
 
     API.addQuestionsSet('hlthFuture', {
@@ -192,7 +192,7 @@ define(['questAPI','underscore'], function(Quest,_){
     API.addQuestionsSet('hlthFutureOther',{
         inherit:'text',
         name:'hlthFutureOther',
-        stem:'If \'Other\' please specify'
+        stem:'If \'Other\' please specify.'
     });
 
     API.addQuestionsSet('hlthWork', {
@@ -228,7 +228,7 @@ define(['questAPI','underscore'], function(Quest,_){
     API.addQuestionsSet('occuSelfOther',{
         inherit:'text',
         name:'occuSelfOther',
-        stem:'If \'Other\' please specify'
+        stem:'If \'Other\' please specify.'
     });
 
     API.addQuestionsSet('workExp',{
@@ -310,7 +310,7 @@ define(['questAPI','underscore'], function(Quest,_){
         {
             inherit:'basicPage',
             questions:[
-                {inherit:'birthMonth'},
+               //{inherit:'birthMonth'},
                 {inherit:'age'}
             ]
         },
@@ -395,7 +395,7 @@ define(['questAPI','underscore'], function(Quest,_){
         {
             inherit:'basicPage',
             questions:[
-                {inherit:'birthMonth'},
+                //{inherit:'birthMonth'},
                 {inherit:'age'}
             ]
         },
