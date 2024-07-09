@@ -40,6 +40,18 @@ define(['questAPI'], function(Quest){
         inherit :'basicQ',
         type: 'selectOne'
     });
+
+    API.addQuestionsSet('slider', {
+        inherit: 'basicQ',
+        type:'slider',
+        min:1,
+        max:7,
+        setps:7,
+        labels: ['Strongly Against', 'Neither Supportive nor Against', 'Strongly Supportive'],
+        required:true,
+        showTicks:true,
+        highlightDirection: 'center'
+    });
 	
     /*API.addQuestionsSet('basicDropdown',{
         inherit :'basicQ',
@@ -65,8 +77,14 @@ define(['questAPI'], function(Quest){
     /**
 	*Specific questions
 	*/	
-    API.addQuestionsSet('chronicPainFwhite',{
+    /*API.addQuestionsSet('chronicPainFwhite',{
         inherit : 'therm',
+        name: 'chronicPainFwhite',
+        stem: ['A 34-year-old female who is a former Olympic gymnast suffers from chronic pain due to a history of multiple injuries, including a right side superior labrum anterior and posterior (SLAP) tear as well as herniated discs on T9 and T4. She has had surgery to repair the SLAP injury which required removing the torn part of the labrum; she experiences ongoing stiffness, weakness, and pain when doing activities that require overhead reach. She has not had surgery to repair the herniated discs and her symptoms include chronic lower back pain, flashes of shooting pain, and occasional numbness in the left leg.  These symptoms make it difficult for her to sit for long periods of time or do strenuous physical activities.<img class="img-responsive" src="<%=current.baseURL%>wf3_nc.jpg"> How supportive are you of this patient having access to medical marijuana for their pain?'],
+    });*/
+
+    API.addQuestionsSet('chronicPainFwhite',{
+        inherit : 'slider',
         name: 'chronicPainFwhite',
         stem: ['A 34-year-old female who is a former Olympic gymnast suffers from chronic pain due to a history of multiple injuries, including a right side superior labrum anterior and posterior (SLAP) tear as well as herniated discs on T9 and T4. She has had surgery to repair the SLAP injury which required removing the torn part of the labrum; she experiences ongoing stiffness, weakness, and pain when doing activities that require overhead reach. She has not had surgery to repair the herniated discs and her symptoms include chronic lower back pain, flashes of shooting pain, and occasional numbness in the left leg.  These symptoms make it difficult for her to sit for long periods of time or do strenuous physical activities.<img class="img-responsive" src="<%=current.baseURL%>wf3_nc.jpg"> How supportive are you of this patient having access to medical marijuana for their pain?'],
     });
