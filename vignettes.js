@@ -46,11 +46,12 @@ define(['questAPI'], function(Quest){
         type:'slider',
         min:1,
         max:7,
-        setps:7,
+        steps:7,
         labels: ['Strongly Against', 'Neither Supportive nor Against', 'Strongly Supportive'],
         required:true,
         showTicks:true,
-        highlightDirection: 'center'
+        highlightDirection: 'center',
+        autosubmit:false
     });
 	
     /*API.addQuestionsSet('basicDropdown',{
