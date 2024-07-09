@@ -51,13 +51,13 @@ define(['questAPI'], function(Quest){
         inherit: 'basicSelect',
         answers: [
             
-            {text:'6 - Strongly Supportive', value:6},
-            {text:'5 - Moderately Supportive', value:5},
-            {text:'4 - Slightly Supportive', value:4},
-            {text:'3 - Neither Supportive nor Against', value:3},
-            {text:'2 - Slightly Against', value:2},
-            {text:'1 - Moderately Against', value:1},
-            {text:'0 - Strongly Against', value:0}
+            {text:'Strongly Supportive', value:6},
+            {text:'Moderately Supportive', value:5},
+            {text:'Slightly Supportive', value:4},
+            {text:'Neither Supportive nor Against', value:3},
+            {text:'Slightly Against', value:2},
+            {text:'Moderately Against', value:1},
+            {text:'Strongly Against', value:0}
         ]
     });
 
