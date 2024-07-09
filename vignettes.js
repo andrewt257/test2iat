@@ -156,22 +156,22 @@ define(['questAPI'], function(Quest){
     API.addSequence([
         {
             mixer : 'wrapper', 
-            data : [
-                        {
+            data : [    {inherit:'chronicPainFwhite'},
+                        /*{
                             mixer : 'choose',
                             wrapper:true,
                             n:1,
                             data : [
                                 {
                                     inherit:'basicPage', 
-                                    questions: {inherit:'chronicPainFwhite'}
+                                    questions: 
                                 },
                                 {   
                                     inherit: 'basicPage',
                                     questions: {inherit: 'chronicPainFblack'}
                                 },
                             ]
-                        },
+                        },*/
                         {
                             mixer : 'choose',
                             wrapper:true,
