@@ -51,7 +51,7 @@ define(['questAPI'], function(Quest){
         required:true,
         showTicks:true,
         highlightDirection: 'center',
-        autosubmit:false
+        autoSubmit:false
     });
 	
     /*API.addQuestionsSet('basicDropdown',{
