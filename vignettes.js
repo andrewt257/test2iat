@@ -36,13 +36,26 @@ define(['questAPI'], function(Quest){
         helpText: 'Tip: For quick response, click to select your answer, and then click again to submit.'
     });
 
+    API.addQuestionsSet('basicQ1',{
+        decline: 'true',
+        required : true, 		
+        errorMsg: {
+            required: isTouch 
+                ? 'Please select an answer, or click \'Decline\'' 
+                : 'Please select an answer, or click \'Decline to Answer\''
+        },
+        autoSubmit:'false',
+        numericValues:'true',
+        help: '<%= pagesMeta.number < 5 %>',
+    });
+
     API.addQuestionsSet('basicSelect',{
         inherit :'basicQ',
         type: 'selectOne'
     });
 
     API.addQuestionsSet('basicSlider', {
-        inherit: 'basicQ',
+        inherit: 'basicQ1',
         type:'slider',
         min:1,
         max:7,
