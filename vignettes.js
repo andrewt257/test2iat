@@ -107,28 +107,28 @@ define(['questAPI'], function(Quest){
     API.addQuestionsSet('ptsdMwhite',{
         inherit : 'therm',
         name: 'ptsdMwhite',
-        stem: ['A 51-year-old male who served in the Afghanistan war for two terms has been struggling to cope with symptoms of post-traumatic stress disorder (PTSD). He has flashbacks about being in combat, is easily startled by loud noises, has difficulty sleeping due to vivid nightmares, trouble concentrating at work, and he avoids situations where he might have to spend time in large crowds.  These symptoms have led to becoming more isolated from people both at work and from longtime friends.<img class="img-responsive" src="<%=current.baseURL%>vwm1_nc.jpg"> How supportive are you of this patient having access to medical marijuana for their PTSD?'],
+        stem: ['A 51-year-old male who served in the Afghanistan war for two terms has been struggling to cope with symptoms of post-traumatic stress disorder (PTSD). He has flashbacks about being in combat, is easily startled by loud noises, has difficulty sleeping due to vivid nightmares, trouble concentrating at work, and he avoids situations where he might have to spend time in large crowds. These symptoms have led to him becoming more isolated from people both at work and from longtime friends.<img class="img-responsive" src="<%=current.baseURL%>vwm1_nc.jpg"> How supportive are you of this patient having access to medical marijuana for their PTSD?'],
         
     });
 
     API.addQuestionsSet('ptsdMblack',{
         inherit : 'therm',
         name: 'ptsdMblack',
-        stem: ['A 51-year-old male who served in the Afghanistan war for two terms has been struggling to cope with symptoms of post-traumatic stress disorder (PTSD). He has flashbacks about being in combat, is easily startled by loud noises, has difficulty sleeping due to vivid nightmares, trouble concentrating at work, and he avoids situations where he might have to spend time in large crowds.  These symptoms have led to becoming more isolated from people both at work and from longtime friends.<img class="img-responsive" src="<%=current.baseURL%>vbm1_nc.jpg"> How supportive are you of this patient having access to medical marijuana for their PTSD?'],
+        stem: ['A 51-year-old male who served in the Afghanistan war for two terms has been struggling to cope with symptoms of post-traumatic stress disorder (PTSD). He has flashbacks about being in combat, is easily startled by loud noises, has difficulty sleeping due to vivid nightmares, trouble concentrating at work, and he avoids situations where he might have to spend time in large crowds. These symptoms have led to him becoming more isolated from people both at work and from longtime friends.<img class="img-responsive" src="<%=current.baseURL%>vbm1_nc.jpg"> How supportive are you of this patient having access to medical marijuana for their PTSD?'],
         
     });
 
     API.addQuestionsSet('depressionFwhite',{
         inherit : 'therm',
         name: 'depressionFwhite',
-        stem: ['A 27- year-old female who was diagnosed with clinical depression when she was 25 has been experiencing fatigue, lack of motivation, feelings of hopelessness, sadness, and worthlessness. She has recently expressed that she has lost interest in doing things she once loved like hiking, reading, and dancing. She has also found herself avoiding daily tasks such as showering, doing laundry, and returning text messages.  She has recently moved back home with her parents, as she was having a difficult time living alone.<img class="img-responsive" src="<%=current.baseURL%>vbf1_nc.jpg">How supportive are you of this patient having access to medical marijuana for their depression?']
+        stem: ['A 27- year-old female who was diagnosed with clinical depression when she was 25 has been experiencing fatigue, lack of motivation, feelings of hopelessness, sadness, and worthlessness. She has recently expressed that she has lost interest in doing things she once loved like hiking, reading, and dancing. She has also found herself avoiding daily tasks such as showering, doing laundry, and returning text messages. She has recently moved back home with her parents, as she was having a difficult time living alone.<img class="img-responsive" src="<%=current.baseURL%>vbf1_nc.jpg">How supportive are you of this patient having access to medical marijuana for their depression?']
 
     });
 
     API.addQuestionsSet('depressionFblack',{
         inherit : 'therm',
         name: 'depressionFblack',
-        stem: ['A 27- year-old female who was diagnosed with clinical depression when she was 25 has been experiencing fatigue, lack of motivation, feelings of hopelessness, sadness, and worthlessness. She has recently expressed that she has lost interest in doing things she once loved like hiking, reading, and dancing. She has also found herself avoiding daily tasks such as showering, doing laundry, and returning text messages.  She has recently moved back home with her parents, as she was having a difficult time living alone.<img class="img-responsive" src="<%=current.baseURL%>vwf1_nc.jpg">How supportive are you of this patient having access to medical marijuana for their depression?']
+        stem: ['A 27- year-old female who was diagnosed with clinical depression when she was 25 has been experiencing fatigue, lack of motivation, feelings of hopelessness, sadness, and worthlessness. She has recently expressed that she has lost interest in doing things she once loved like hiking, reading, and dancing. She has also found herself avoiding daily tasks such as showering, doing laundry, and returning text messages. She has recently moved back home with her parents, as she was having a difficult time living alone.<img class="img-responsive" src="<%=current.baseURL%>vwf1_nc.jpg">How supportive are you of this patient having access to medical marijuana for their depression?']
 
     });
 
