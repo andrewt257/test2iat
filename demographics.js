@@ -184,7 +184,7 @@ define(['questAPI','underscore'], function(Quest,_){
             {text:'Public Health', value:8},
             {text:'Radiology', value:9},
             {text:'Researcher', value:10},
-            {text:'Radiology technologist', value:11},
+            {text:'Radiology Technologist', value:11},
             {text:'Other', value:0}
         ]
     });
@@ -198,6 +198,7 @@ define(['questAPI','underscore'], function(Quest,_){
     API.addQuestionsSet('hlthWork', {
         inherit:'singleChoice',
         name:'hlthWork',
+        autoSubmit: false,
         stem:'Do you currently or have you ever worked in healthcare?',
         answers:[
             {text:'Yes', value:1},
