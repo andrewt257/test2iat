@@ -43,6 +43,12 @@ define(['questAPI','underscore'], function(Quest,_){
         helpText: 'Tip: For quick response, click to select your answer, and then click again to submit.'
     });
 
+    API.addQuestionsSet('singleChoice1',{
+        inehrit: 'basicQ',
+        type: 'selectOne',
+        autoSubmit:false
+    });
+
     API.addQuestionsSet('text',{
         inherit: 'basicQ',
         type: 'text',
@@ -196,9 +202,8 @@ define(['questAPI','underscore'], function(Quest,_){
     });
 
     API.addQuestionsSet('hlthWork', {
-        inherit:'singleChoice',
+        inherit:'singleChoice1',
         name:'hlthWork',
-        autoSubmit: false,
         stem:'Do you currently or have you ever worked in healthcare?',
         answers:[
             {text:'Yes', value:1},
@@ -211,7 +216,6 @@ define(['questAPI','underscore'], function(Quest,_){
         inherit: 'multiChoice',
         name: 'occuSelf',
         stem: 'Which of the following roles have you currently or previously held?(check all that apply).',
-        numericValues:false,
         answers: [
             {text:'Certified Nursing Assitant', value:1},
             {text:'Emergency Medical Technician', value:2},
