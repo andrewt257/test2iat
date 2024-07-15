@@ -159,14 +159,14 @@ define(['questAPI','underscore'], function(Quest,_){
             {text:'Radiologic Technology',value:9},
             {text:'Sports Medicine',value:10},
             {text:'Undeclared',value:11},
-            {text:'Other/Multiple', value:0}
+            {text:'Other', value:0}
         ]
     });
 
     API.addQuestionsSet('majorOther',{
         inherit:'text',
         name:'majorOther',
-        stem:'If \'Other/Multiple\' please specify.'
+        stem:'If \'Other\' please specify.'
     });
 
     API.addQuestionsSet('hlthFuture', {
