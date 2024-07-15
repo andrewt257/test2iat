@@ -72,11 +72,6 @@ define(['managerAPI',
             header: 'Welcome'
         }],
 
-        consent1: [{
-            type:'message',
-            buttonText: 'I acknowledge'
-        }],
-
         raceiat_instructions: [{
             inherit: 'instructions',
             name: 'raceiat_instructions',
