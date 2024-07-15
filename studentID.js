@@ -13,8 +13,7 @@ define(['questAPI'], function(Quest){
     API.addPagesSet('basicPage',{
         noSubmit:false, //Change to true if you don't want to show the submit button.
         header: 'Student ID', 
-        autoFocus:true, 
-        progressBar:  'Page <%= pagesMeta.number %> out of 1'
+        autoFocus:true,
     });
 	
     /**
