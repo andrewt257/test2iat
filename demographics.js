@@ -79,26 +79,6 @@ define(['questAPI','underscore'], function(Quest,_){
     /**
 	* Actual questions
 	*/
-    API.addQuestionsSet('birthMonth',{
-        inherit: 'singleChoice',
-        style:'multiButtons',
-        name: 'birthmonth',
-        stem: 'What is your birth month?',
-        answers: [
-            {text:'January',value:1},
-            {text:'February',value:2},
-            {text:'March',value:3},
-            {text:'April',value:4},
-            {text:'May',value:5},
-            {text:'June',value:6},
-            {text:'July',value:7},
-            {text:'August',value:8},
-            {text:'September',value:9},
-            {text:'October',value:10},
-            {text:'November',value:11},
-            {text:'December',value:12}
-        ]
-    });
 
     API.addQuestionsSet('age',{
         inherit:'singleChoicedrop',
@@ -175,22 +155,35 @@ define(['questAPI','underscore'], function(Quest,_){
         stem:'If \'Other\' please specify.'
     });
 
-    API.addQuestionsSet('hlthFuture', {
+    API.addQuestionsSet('hlthCareer', {
         inherit: 'singleChoice',
-        name:'hlthFuture',
-        stem:'What area of healthcare are you looking to go into?',
+        name:'hlthCareer',
+        stem:'Are you planning on pursuing a career in healthcare or a related field?',
         answers: [
-            {text:'Administration', value:1},
-            {text:'Nursing', value:2},
-            {text:'Occupational Therapy', value:3},
-            {text:'Physical Therapy', value:4},
-            {text:'Physician', value:5},
-            {text:'Physician Assistant/Associate', value:6},
-            {text:'Psychology', value:7},
-            {text:'Public Health', value:8},
-            {text:'Radiology', value:9},
-            {text:'Researcher', value:10},
-            {text:'Radiology Technologist', value:11},
+            {text:'Yes', value:1},
+            {text:'Maybe', value:2},
+            {text:'No', Value:0}
+        ]
+
+    });
+
+    API.addQuestionsSet('hlthFuture', {
+        inherit: 'multiChoice',
+        name:'hlthFuture',
+        stem:'What area(s) of healthcare are you looking to go into?',
+        answers: [
+            {text:'Administrator', value:1},
+            {text:'Clinical Psychologist', value:2},
+            {text:'Social Worker', value:3},
+            {text:'Mental health Therapist(MFT, LMFT, LPC, etc.)', value:4},
+            {text:'Nurse/Nurse Practitioner', value:5},
+            {text:'Occupational Therapist', value:6},
+            {text:'Physical Therapist', value:7},
+            {text:'Physician', value:8},
+            {text:'Physician Assistant/Associate', value:9},
+            {text:'Public Health Professional', value:10},
+            {text:'Researcher', value:11},
+            {text:'Radiologic Technologist', value:12},
             {text:'Other', value:0}
         ]
     });
@@ -349,12 +342,16 @@ define(['questAPI','underscore'], function(Quest,_){
         },
         {inherit: 'basicPage',
             questions:[
-                {inherit: 'hlthFuture'},
+                {inherit:'hlthCareer'},
                 {
                     mixer:'branch',
                     remix:true,
-                    conditions:[{compare: 'questions.hlthFuture.response',to:0}],
+                    conditions:[
+                        {compare: 'questions.hlthCareer.response',to:1},
+                        {compare: 'questions.hlthCareer.response',to:2}
+                    ],
                     data: [
+                        {inherit:'hlthFuture'},
                         {inherit:'hlthFutureOther'}
                     ]
                 },
@@ -434,12 +431,16 @@ define(['questAPI','underscore'], function(Quest,_){
         },
         {inherit: 'basicPage',
             questions:[
-                {inherit: 'hlthFuture'},
+                {inherit:'hlthCareer'},
                 {
                     mixer:'branch',
                     remix:true,
-                    conditions:[{compare: 'questions.hlthFuture.response',to:0}],
+                    conditions:[
+                        {compare: 'questions.hlthCareer.response',to:1},
+                        {compare: 'questions.hlthCareer.response',to:2}
+                    ],
                     data: [
+                        {inherit:'hlthFuture'},
                         {inherit:'hlthFutureOther'}
                     ]
                 },
