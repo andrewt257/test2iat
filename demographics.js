@@ -158,6 +158,7 @@ define(['questAPI','underscore'], function(Quest,_){
     API.addQuestionsSet('hlthCareer', {
         inherit: 'singleChoice',
         name:'hlthCareer',
+        autoSubmit:false,
         stem:'Are you planning on pursuing a career in healthcare or a related field?',
         answers: [
             {text:'Yes', value:1},
@@ -347,7 +348,7 @@ define(['questAPI','underscore'], function(Quest,_){
                     mixer:'branch',
                     remix:true,
                     conditions:[
-                        {compare: 'questions.hlthCareer.response',to:[1,2]},
+                        {compare: 'questions.hlthCareer.response',to:!0},
                     ],
                     data: [
                         {inherit:'hlthFuture'},
