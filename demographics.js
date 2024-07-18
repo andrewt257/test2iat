@@ -309,14 +309,7 @@ define(['questAPI','underscore'], function(Quest,_){
         {
             inherit:'basicPage',
             questions:[
-               //{inherit:'birthMonth'},
-                {inherit:'age'}
-            ]
-        },
-
-        {
-            inherit: 'basicPage',
-            questions: [
+                {inherit:'age'},
                 {inherit: 'genderIdentity'},
                 {
                     mixer:'branch',
@@ -325,7 +318,8 @@ define(['questAPI','underscore'], function(Quest,_){
                     data: [
                         {inherit:'genderOther'}
                     ]
-                },
+                }
+                  
             ]
         },
 
@@ -399,13 +393,7 @@ define(['questAPI','underscore'], function(Quest,_){
                 },            
             ],
         },
-       /* {
-            inherit: 'basicPage',
-            questions: [
-                // minor occupation
-                
-            ]
-        },*/
+
         {
             inherit:'basicPage',
             questions: [{inherit:'cannPersonal'}]
@@ -416,13 +404,7 @@ define(['questAPI','underscore'], function(Quest,_){
         {
             inherit:'basicPage',
             questions:[
-                //{inherit:'birthMonth'},
-                {inherit:'age'}
-            ]
-        },
-        {
-            inherit: 'basicPage',
-            questions: [
+                {inherit:'age'},
                 {inherit: 'genderIdentity'},
                 {
                     mixer:'branch',
@@ -431,10 +413,12 @@ define(['questAPI','underscore'], function(Quest,_){
                     data: [
                         {inherit:'genderOther'}
                     ]
-                },
+                }
+                  
             ]
         },
-                {
+        
+        {
             inherit: 'basicPage',
             questions: [ 
                 {inherit:'race', autoSubmit:true},
