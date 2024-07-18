@@ -347,7 +347,7 @@ define(['questAPI','underscore'], function(Quest,_){
                     mixer:'branch',
                     remix:true,
                     conditions:[
-                        {compare: 'questions.hlthCareer.response',to:(1,2)},
+                        {compare: 'questions.hlthCareer.response',to:[1,2]},
                     ],
                     data: [
                         {inherit:'hlthFuture'},
