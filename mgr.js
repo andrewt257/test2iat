@@ -106,12 +106,6 @@ define(['managerAPI',
             scriptUrl: 'raceiat.js'
         }],
 
-        debriefing: [{
-            type: 'quest',
-            name: 'debriefing',
-            scriptUrl: 'debriefing.js'
-        }],
-
         studentID: [{
             type: 'quest',
             name: 'studentID',
