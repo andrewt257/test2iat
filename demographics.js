@@ -313,6 +313,7 @@ define(['questAPI','underscore'], function(Quest,_){
                 {inherit:'age'}
             ]
         },
+
         {
             inherit: 'basicPage',
             questions: [
@@ -327,13 +328,15 @@ define(['questAPI','underscore'], function(Quest,_){
                 },
             ]
         },
-                {
+
+        {
             inherit: 'basicPage',
             questions: [ 
                 {inherit:'race', autoSubmit:true},
                 {inherit:'raceOther'}
             ]
         },
+
         {
             inherit: 'basicPage',
             questions:[
@@ -341,22 +344,37 @@ define(['questAPI','underscore'], function(Quest,_){
                 {inherit:'majorOther'}
             ]
         },
+
         {inherit: 'basicPage',
             questions:[
                 {inherit:'hlthCareer'},
                 {
-                    mixer:'branch',
-                    remix:true,
-                    conditions:[
-                        {compare: 'questions.hlthCareer.response',to:0, operator:'greaterThan'},
-                    ],
-                    data: [
-                        {inherit:'hlthFuture'},
-                        {inherit:'hlthFutureOther'}
-                    ]
-                },
+                    mixer:'multiBranch',
+                    branches:[
+
+                        {
+                            conditions:[
+                            {compare: 'questions.hlthCareer.response',to:1}
+                        ],
+                        data: [
+                            {inherit:'hlthFuture'},
+                            {inherit:'hlthFutureOther'}
+                        ]
+                        },
+                    
+                        {conditions:[
+                            {compare:'questions.hlthCareer.response', to:2}
+                        ],
+                        data: [
+                            {inherit:'hlthFuture'},
+                            {inherit:'hlthFutureOther'}
+                            ]
+                        }
+                        ]
+                    }
             ]
         },
+
         {
             inherit:'basicPage',
             questions:[
@@ -433,17 +451,29 @@ define(['questAPI','underscore'], function(Quest,_){
             questions:[
                 {inherit:'hlthCareer'},
                 {
-                    mixer:'branch',
-                    remix:true,
-                    conditions:[
-                        {compare: 'questions.hlthCareer.response',to:1},
-                        {compare: 'questions.hlthCareer.response',to:2}
-                    ],
-                    data: [
-                        {inherit:'hlthFuture'},
-                        {inherit:'hlthFutureOther'}
-                    ]
-                },
+                    mixer:'multiBranch',
+                    branches:[
+
+                        {
+                            conditions:[
+                            {compare: 'questions.hlthCareer.response',to:1}
+                        ],
+                        data: [
+                            {inherit:'hlthFuture'},
+                            {inherit:'hlthFutureOther'}
+                        ]
+                        },
+                    
+                        {conditions:[
+                            {compare:'questions.hlthCareer.response', to:2}
+                        ],
+                        data: [
+                            {inherit:'hlthFuture'},
+                            {inherit:'hlthFutureOther'}
+                            ]
+                        }
+                        ]
+                    }
             ]
         },
         {
