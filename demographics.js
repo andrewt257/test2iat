@@ -350,24 +350,25 @@ define(['questAPI','underscore'], function(Quest,_){
                 {inherit:'hlthCareer'},
                 {
                     mixer:'multiBranch',
+                    remix:true,
                     branches:[
-
                         {
                             conditions:[
-                            {compare: 'questions.hlthCareer.response',to:1}
-                        ],
-                        data: [
-                            {inherit:'hlthFuture'},
-                            {inherit:'hlthFutureOther'}
-                        ]
+                                {compare: 'questions.hlthCareer.response',to:1}
+                            ],
+                            data: [
+                                {inherit:'hlthFuture'},
+                                {inherit:'hlthFutureOther'}
+                            ]
                         },
                     
-                        {conditions:[
-                            {compare:'questions.hlthCareer.response', to:2}
-                        ],
-                        data: [
-                            {inherit:'hlthFuture'},
-                            {inherit:'hlthFutureOther'}
+                        {
+                            conditions:[
+                                {compare:'questions.hlthCareer.response', to:2}
+                            ],
+                            data: [
+                                {inherit:'hlthFuture'},
+                                {inherit:'hlthFutureOther'}
                             ]
                         }
                         ]
@@ -452,24 +453,25 @@ define(['questAPI','underscore'], function(Quest,_){
                 {inherit:'hlthCareer'},
                 {
                     mixer:'multiBranch',
+                    remix:true,
                     branches:[
-
                         {
                             conditions:[
-                            {compare: 'questions.hlthCareer.response',to:1}
-                        ],
-                        data: [
-                            {inherit:'hlthFuture'},
-                            {inherit:'hlthFutureOther'}
-                        ]
+                                {compare: 'questions.hlthCareer.response',to:1}
+                            ],
+                            data: [
+                                {inherit:'hlthFuture'},
+                                {inherit:'hlthFutureOther'}
+                            ]
                         },
                     
-                        {conditions:[
-                            {compare:'questions.hlthCareer.response', to:2}
-                        ],
-                        data: [
-                            {inherit:'hlthFuture'},
-                            {inherit:'hlthFutureOther'}
+                        {
+                            conditions:[
+                                {compare:'questions.hlthCareer.response', to:2}
+                            ],
+                            data: [
+                                {inherit:'hlthFuture'},
+                                {inherit:'hlthFutureOther'}
                             ]
                         }
                         ]
