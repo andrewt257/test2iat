@@ -236,7 +236,7 @@ define(['questAPI','underscore'], function(Quest,_){
         name: 'workExp',
         stem: 'How long have you worked in healthcare?',
         answers:[
-            {text:'0', value:0},
+            {text:'Less than 1 month', value:0},
             {text:'1 month', value:101},
             {text:'2 months', value:102},
             {text:'3 months', value:103},
