@@ -176,7 +176,7 @@ define(['questAPI','underscore'], function(Quest,_){
             {text:'Administrator', value:1},
             {text:'Clinical Psychologist', value:2},
             {text:'Social Worker', value:3},
-            {text:'Mental health Therapist(MFT, LMFT, LPC, etc.)', value:4},
+            {text:'Mental health Therapist (MFT, LMFT, LPC, etc.)', value:4},
             {text:'Nurse/Nurse Practitioner', value:5},
             {text:'Occupational Therapist', value:6},
             {text:'Physical Therapist', value:7},
