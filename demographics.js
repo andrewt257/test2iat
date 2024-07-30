@@ -54,7 +54,7 @@ define(['questAPI','underscore'], function(Quest,_){
         type: 'text',
         dflt:'n/a',
         noSubmit:false,
-        required: false
+        required: true
     });
 
     API.addQuestionsSet('singleChoicedrop',{
