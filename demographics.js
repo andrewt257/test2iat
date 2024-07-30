@@ -52,6 +52,7 @@ define(['questAPI','underscore'], function(Quest,_){
     API.addQuestionsSet('text',{
         inherit: 'basicQ',
         type: 'text',
+        dflt:'n/a',
         noSubmit:false,
         required: false
     });
